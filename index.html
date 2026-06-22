@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="MitchIvin XP - Uma vitrine de design system moderna e nostalgicamente inspirada. Experimente a computação retrô do início dos anos 2000, com um clone do MS Paint.">
+  <title>MitchIvin XP - Design System & Demonstração do Paint</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- The Retro-Modern Desktop Canvas -->
+  <div class="xp-desktop" id="desktop">
+
+    <!-- Desktop Shortcut Icons -->
+    <div class="xp-desktop-icons">
+      <!-- Icon 1: Meu Computador (Visão Geral do Tema) -->
+      <div class="xp-desktop-icon" onclick="selectIcon(this, event)" ondblclick="openWindow('window-overview')">
+        <img class="xp-desktop-icon-img" src="icons/Windows XP Icons/My Computer.png" alt="Meu Computador">
+        <span class="xp-desktop-icon-text">Meu Computador</span>
+      </div>
+
+      <!-- Icon 2: Meus Documentos (Cores & Tokens) -->
+      <div class="xp-desktop-icon" onclick="selectIcon(this, event)" ondblclick="openWindow('window-colors')">
+        <img class="xp-desktop-icon-img" src="icons/Windows XP Icons/My Documents.png" alt="Meus Documentos">
+        <span class="xp-desktop-icon-text">Meus Documentos</span>
+      </div>
+
+      <!-- Icon 3: Internet Explorer (Tipografia) -->
+      <div class="xp-desktop-icon" onclick="selectIcon(this, event)" ondblclick="openWindow('window-typography')">
+        <img class="xp-desktop-icon-img" src="icons/Windows XP Icons/Internet Explorer 6.png" alt="Internet Explorer">
+        <span class="xp-desktop-icon-text">Internet Explorer</span>
+      </div>
+
+      <!-- Icon 4: Paint -->
+      <div class="xp-desktop-icon" onclick="selectIcon(this, event)" ondblclick="openWindow('window-paint')">
+        <img class="xp-desktop-icon-img" src="icons/Windows XP Icons/Paint.png" alt="Paint">
+        <span class="xp-desktop-icon-text">Paint</span>
+      </div>
+
+      <!-- Icon 5: Lixeira (Fazer & Não Fazer) -->
+      <div class="xp-desktop-icon" onclick="selectIcon(this, event)" ondblclick="openWindow('window-dos')">
+        <img class="xp-desktop-icon-img" src="icons/Windows XP Icons/Recycle Bin (empty).png" alt="Lixeira">
+        <span class="xp-desktop-icon-text">Lixeira</span>
+      </div>
+
+      <!-- Icon 6: Painel de Controle (Biblioteca de Componentes) -->
+      <div class="xp-desktop-icon" onclick="selectIcon(this, event)" ondblclick="openWindow('window-components')">
+        <img class="xp-desktop-icon-img" src="icons/Windows XP Icons/Control Panel.png" alt="Painel de Controle">
+        <span class="xp-desktop-icon-text">Painel de Controle</span>
+      </div>
+
+      <!-- Icon 7: Propriedades de Grade (Layout & Grade) -->
+      <div class="xp-desktop-icon" onclick="selectIcon(this, event)" ondblclick="openWindow('window-layout')">
+        <img class="xp-desktop-icon-img" src="icons/Windows XP Icons/Tweak UI.png" alt="Propriedades de Grade">
+        <span class="xp-desktop-icon-text">Propriedades de Grade</span>
+      </div>
+
+      <!-- Icon 8: Configurações de Vídeo (Simulador Responsivo) -->
+      <div class="xp-desktop-icon" onclick="selectIcon(this, event)" ondblclick="openWindow('window-responsive')">
+        <img class="xp-desktop-icon-img" src="icons/Windows XP Icons/Display Properties.png" alt="Configurações de Vídeo">
+        <span class="xp-desktop-icon-text">Propriedades de Vídeo</span>
+      </div>
+    </div>
+
+
+    <!-- ==================== WINDOW 1: OVERVIEW ==================== -->
+    <div class="xp-window active" id="window-overview" style="left: 60px; top: 40px; width: 620px;">
+      <div class="xp-window-titlebar" onmousedown="dragStart(event, 'window-overview')">
+        <div class="xp-window-title">
+          <img class="xp-window-title-icon" src="icons/Windows XP Icons/My Computer.png" alt="">
+          MitchIvin XP - Visão Geral do Sistema
+        </div>
+        <div class="xp-window-controls">
+          <button class="xp-window-control-btn" onclick="minimizeWindow('window-overview')">_</button>
+          <button class="xp-window-control-btn" onclick="maximizeWindow('window-overview')">▢</button>
+          <button class="xp-window-control-btn close" onclick="closeWindow('window-overview')">X</button>
+        </div>
+      </div>
+      <div class="xp-window-menu">
+        <span class="xp-window-menu-item">Arquivo</span>
+        <span class="xp-window-menu-item">Editar</span>
+        <span class="xp-window-menu-item">Exibir</span>
+        <span class="xp-window-menu-item">Ajuda</span>
+      </div>
+      <div class="xp-window-content">
+        <h2 class="font-h2" style="color: var(--primary-navy); margin-bottom: var(--spacing-md);">MitchIvin XP</h2>
+        <p class="font-body" style="margin-bottom: var(--spacing-lg);">
+          MitchIvin XP incorpora a estética nostálgica do design de sistemas operacionais do início dos anos 2000, reimaginada sob a ótica de um designer visual moderno. O sistema celebra cores primárias fortes — azuis vívidos, laranjas e verdes limão — contrastando com tons neutros marcantes e brancos cristalinos.
+        </p>
+
+        <div class="xp-container-blue" style="margin-bottom: var(--spacing-lg);">
+          <h3 class="font-ui-label-bold" style="color: var(--primary-navy); margin-bottom: var(--spacing-xs);">DESIGN EM RESUMO</h3>
+          <ul class="font-body" style="list-style-type: square; padding-left: 20px;">
+            <li>Tahoma para textos altamente legíveis; MS Sans Serif para botões do sistema</li>
+            <li>Espaçamento baseado em grade de 4px para alinhamento</li>
+            <li>Bordas arredondadas nítidas limitadas a 3px (elementos) e 5px (superfícies)</li>
+            <li>Cores vibrantes do tema e estilo de elevação sutil em tons de azul</li>
+          </ul>
+        </div>
+
+        <p class="font-body">
+          Este sistema equilibra geometrias retrô pixel-perfect com sofisticação contemporânea, criando uma interface que parece divertidamente familiar e intencionalmente refinada.
+        </p>
+      </div>
+    </div>
+
+
+    <!-- ==================== WINDOW 2: COLORS ==================== -->
+    <div class="xp-window" id="window-colors" style="left: 100px; top: 80px; width: 680px; display: none;">
+      <div class="xp-window-titlebar" onmousedown="dragStart(event, 'window-colors')">
+        <div class="xp-window-title">
+          <img class="xp-window-title-icon" src="icons/Windows XP Icons/Color Profile.png" alt="">
+          Paleta de Cores & Funções dos Tokens
+        </div>
+        <div class="xp-window-controls">
+          <button class="xp-window-control-btn" onclick="minimizeWindow('window-colors')">_</button>
+          <button class="xp-window-control-btn" onclick="maximizeWindow('window-colors')">▢</button>
+          <button class="xp-window-control-btn close" onclick="closeWindow('window-colors')">X</button>
+        </div>
+      </div>
+      <div class="xp-window-content">
+        <h3 class="font-ui-label-bold" style="margin-bottom: var(--spacing-sm);">NÚCLEO PRINCIPAL DA MARCA</h3>
+        <div class="color-swatch-grid" style="margin-bottom: var(--spacing-lg);">
+          <div class="color-swatch-card" onclick="copyColor('#000080')">
+            <div class="color-swatch-color" style="background-color: #000080;"></div>
+            <div class="color-swatch-info">
+              <div class="color-swatch-name">Marinho Primário</div>
+              <div class="color-swatch-hex">#000080</div>
+            </div>
+          </div>
+          <div class="color-swatch-card" onclick="copyColor('#0F61CB')">
+            <div class="color-swatch-color" style="background-color: #0F61CB;"></div>
+            <div class="color-swatch-info">
+              <div class="color-swatch-name">Azul Brilhante</div>
+              <div class="color-swatch-hex">#0F61CB</div>
+            </div>
+          </div>
+          <div class="color-swatch-card" onclick="copyColor('#002D99')">
+            <div class="color-swatch-color" style="background-color: #002D99;"></div>
+            <div class="color-swatch-info">
+              <div class="color-swatch-name">Azul Escuro</div>
+              <div class="color-swatch-hex">#002D99</div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="font-ui-label-bold" style="margin-bottom: var(--spacing-sm);">ACENTOS & ESTADOS</h3>
+        <div class="color-swatch-grid" style="margin-bottom: var(--spacing-lg);">
+          <div class="color-swatch-card" onclick="copyColor('#587CDB')">
+            <div class="color-swatch-color" style="background-color: #587CDB;"></div>
+            <div class="color-swatch-info">
+              <div class="color-swatch-name">Azul Celeste</div>
+              <div class="color-swatch-hex">#587CDB</div>
+            </div>
+          </div>
+          <div class="color-swatch-card" onclick="copyColor('#96FF96')">
+            <div class="color-swatch-color" style="background-color: #96FF96;"></div>
+            <div class="color-swatch-info">
+              <div class="color-swatch-name">Verde Limão</div>
+              <div class="color-swatch-hex">#96FF96</div>
+            </div>
+          </div>
+          <div class="color-swatch-card" onclick="copyColor('#FFFFE1')">
+            <div class="color-swatch-color" style="background-color: #FFFFE1;"></div>
+            <div class="color-swatch-info">
+              <div class="color-swatch-name">Amarelo Pálido</div>
+              <div class="color-swatch-hex">#FFFFE1</div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="font-ui-label-bold" style="margin-bottom: var(--spacing-sm);">SUPERFÍCIES & CONTAINERS</h3>
+        <div class="color-swatch-grid">
+          <div class="color-swatch-card" onclick="copyColor('#FFFFFF')">
+            <div class="color-swatch-color" style="background-color: #FFFFFF; border-bottom: 1px solid #ddd;"></div>
+            <div class="color-swatch-info">
+              <div class="color-swatch-name">Branco Puro</div>
+              <div class="color-swatch-hex">#FFFFFF</div>
+            </div>
+          </div>
+          <div class="color-swatch-card" onclick="copyColor('#F2F2F2')">
+            <div class="color-swatch-color" style="background-color: #F2F2F2;"></div>
+            <div class="color-swatch-info">
+              <div class="color-swatch-name">Cinza Claro</div>
+              <div class="color-swatch-hex">#F2F2F2</div>
+            </div>
+          </div>
+          <div class="color-swatch-card" onclick="copyColor('#D2E5FA')">
+            <div class="color-swatch-color" style="background-color: #D2E5FA;"></div>
+            <div class="color-swatch-info">
+              <div class="color-swatch-name">Superfície Azul Claro</div>
+              <div class="color-swatch-hex">#D2E5FA</div>
+            </div>
+          </div>
+        </div>
+        <p class="font-caption" style="margin-top: var(--spacing-md);">* Clique em qualquer amostra para copiar seu valor HEX para a área de transferência.</p>
+      </div>
+    </div>
+
+
+    <!-- ==================== WINDOW 3: TYPOGRAPHY ==================== -->
+    <div class="xp-window" id="window-typography" style="left: 140px; top: 120px; width: 660px; display: none;">
+      <div class="xp-window-titlebar" onmousedown="dragStart(event, 'window-typography')">
+        <div class="xp-window-title">
+          <img class="xp-window-title-icon" src="icons/Windows XP Icons/Fonts.png" alt="">
+          Amostras de Tipografia
+        </div>
+        <div class="xp-window-controls">
+          <button class="xp-window-control-btn" onclick="minimizeWindow('window-typography')">_</button>
+          <button class="xp-window-control-btn" onclick="maximizeWindow('window-typography')">▢</button>
+          <button class="xp-window-control-btn close" onclick="closeWindow('window-typography')">X</button>
+        </div>
+      </div>
+      <div class="xp-window-content">
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: var(--spacing-lg);">
+          <thead>
+            <tr style="border-bottom: 2px solid var(--light-blue-surface); text-align: left;">
+              <th style="padding: var(--spacing-sm); font-size: 11px;">Estilo</th>
+              <th style="padding: var(--spacing-sm); font-size: 11px;">Especificações</th>
+              <th style="padding: var(--spacing-sm); font-size: 11px;">Visualização</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--barely-gray);">
+              <td style="padding: var(--spacing-sm); font-size: 11px; font-weight: bold;">Display / H1</td>
+              <td style="padding: var(--spacing-sm); font-size: 11px; color: var(--text-secondary);">Tahoma, 80px, 700
+              </td>
+              <td style="padding: var(--spacing-sm); font-size: 32px; font-weight: 700;">H1 (Escalonado 80px)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--barely-gray);">
+              <td style="padding: var(--spacing-sm); font-size: 11px; font-weight: bold;">Título H2</td>
+              <td style="padding: var(--spacing-sm); font-size: 11px; color: var(--text-secondary);">Tahoma, 40px, 700
+              </td>
+              <td style="padding: var(--spacing-sm); font-size: 24px; font-weight: 700;">H2 Cabeçalho de Seção</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--barely-gray);">
+              <td style="padding: var(--spacing-sm); font-size: 11px; font-weight: bold;">Texto de Corpo</td>
+              <td style="padding: var(--spacing-sm); font-size: 11px; color: var(--text-secondary);">Tahoma, 16px, 400
+              </td>
+              <td style="padding: var(--spacing-sm); font-size: 16px;">Texto de corpo legível e confortável em Tahoma.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--barely-gray);">
+              <td style="padding: var(--spacing-sm); font-size: 11px; font-weight: bold;">Rótulo de UI</td>
+              <td style="padding: var(--spacing-sm); font-size: 11px; color: var(--text-secondary);">Tahoma, 11px,
+                400/700</td>
+              <td style="padding: var(--spacing-sm); font-size: 11px; font-weight: 700;">Especificação de Rótulo</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--barely-gray);">
+              <td style="padding: var(--spacing-sm); font-size: 11px; font-weight: bold;">Texto de Botão</td>
+              <td style="padding: var(--spacing-sm); font-size: 11px; color: var(--text-secondary);">Pixelated MS Sans
+                Serif, 11px</td>
+              <td
+                style="padding: var(--spacing-sm); font-family: 'Pixelated MS Sans Serif', monospace; font-size: 11px;">
+                Texto de UI OK / Cancelar</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Live Typography Input Sandbox -->
+        <div class="xp-container-subtle">
+          <label class="xp-label" for="typo-input">Testador de Tipografia ao Vivo</label>
+          <input type="text" class="xp-input" id="typo-input" value="MitchIvin XP Design System"
+            oninput="updateTypoPreview(this.value)" style="margin-bottom: var(--spacing-md);">
+
+          <div style="margin-top: var(--spacing-md);">
+            <span class="xp-caption">Fonte de Botão MS Sans Serif (11px):</span>
+            <div id="preview-ms"
+              style="font-family: 'Pixelated MS Sans Serif', 'Courier New', monospace; font-size: 11px; margin-bottom: var(--spacing-sm);">
+              MitchIvin XP Design System</div>
+
+            <span class="xp-caption">Fonte de Corpo Tahoma (16px):</span>
+            <div id="preview-tahoma"
+              style="font-family: Tahoma, sans-serif; font-size: 16px; margin-bottom: var(--spacing-sm);">MitchIvin XP
+              Design System</div>
+
+            <span class="xp-caption">Fonte Grande Arial (18px):</span>
+            <div id="preview-arial" style="font-family: Arial, sans-serif; font-size: 18px;">MitchIvin XP Design System
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ==================== WINDOW 4: MS PAINT ==================== -->
+    <div class="xp-window" id="window-paint" style="left: 80px; top: 60px; width: 620px; display: none;">
+      <div class="xp-window-titlebar" onmousedown="dragStart(event, 'window-paint')">
+        <div class="xp-window-title">
+          <img class="xp-window-title-icon" src="icons/Windows XP Icons/Paint.png" alt="">
+          sem título - Paint
+        </div>
+        <div class="xp-window-controls">
+          <button class="xp-window-control-btn" onclick="minimizeWindow('window-paint')">_</button>
+          <button class="xp-window-control-btn" onclick="maximizeWindow('window-paint')">▢</button>
+          <button class="xp-window-control-btn close" onclick="closeWindow('window-paint')">X</button>
+        </div>
+      </div>
+      <div class="xp-window-menu">
+        <span class="xp-window-menu-item">Arquivo</span>
+        <span class="xp-window-menu-item">Editar</span>
+        <span class="xp-window-menu-item" onclick="clearCanvas()">Limpar Tela</span>
+        <span class="xp-window-menu-item">Ajuda</span>
+      </div>
+
+      <!-- Paint layout container -->
+      <div class="xp-paint-container">
+        <div class="xp-paint-main">
+          <!-- Left toolbar -->
+          <div class="xp-paint-toolbar">
+            <div class="xp-paint-tools-grid">
+              <div class="xp-paint-tool-btn active" id="tool-pencil" onclick="selectPaintTool('pencil')" title="Lápis">
+                <svg class="xp-paint-tool-icon" viewBox="0 0 14 14" fill="none" stroke="#222222">
+                  <path d="M2 12L3 9L11 1L13 3L5 11L2 12Z" stroke-width="1.5" />
+                  <line x1="8" y1="4" x2="10" y2="6" stroke-width="1" />
+                </svg>
+              </div>
+              <div class="xp-paint-tool-btn" id="tool-brush" onclick="selectPaintTool('brush')" title="Pincel">
+                <svg class="xp-paint-tool-icon" viewBox="0 0 14 14" fill="none" stroke="#222222">
+                  <path d="M3 11C3 11 5 12 7 9L11 4L10 3L6 8C3 10 3 11 3 11Z" fill="#222222" />
+                  <path d="M1 13C2 12 3 11 3 11" stroke-width="2" />
+                </svg>
+              </div>
+              <div class="xp-paint-tool-btn" id="tool-eraser" onclick="selectPaintTool('eraser')" title="Borracha">
+                <svg class="xp-paint-tool-icon" viewBox="0 0 14 14" fill="none" stroke="#222222">
+                  <rect x="2" y="4" width="10" height="6" rx="1" fill="#D2E5FA" stroke-width="1.5" />
+                  <line x1="7" y1="4" x2="7" y2="10" stroke-width="1.5" />
+                </svg>
+              </div>
+              <div class="xp-paint-tool-btn" onclick="clearCanvas()" title="Limpar Tela">
+                <svg class="xp-paint-tool-icon" viewBox="0 0 14 14" fill="none" stroke="#222222">
+                  <rect x="3" y="4" width="8" height="8" rx="1" />
+                  <line x1="2" y1="4" x2="12" y2="4" stroke-width="1.5" />
+                  <line x1="6" y1="6" x2="6" y2="10" />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Brush size selections -->
+            <div class="xp-paint-sizes">
+              <div class="xp-paint-size-option active" data-size="1" onclick="selectPaintSize(1, this)"
+                title="Tamanho 1px"></div>
+              <div class="xp-paint-size-option" data-size="3" onclick="selectPaintSize(3, this)" title="Tamanho 3px"></div>
+              <div class="xp-paint-size-option" data-size="5" onclick="selectPaintSize(5, this)" title="Tamanho 5px"></div>
+              <div class="xp-paint-size-option" data-size="8" onclick="selectPaintSize(8, this)" title="Tamanho 8px"></div>
+            </div>
+          </div>
+
+          <!-- Drawing Canvas Container -->
+          <div class="xp-paint-canvas-area">
+            <canvas class="xp-paint-canvas" id="paint-canvas" width="480" height="340"></canvas>
+          </div>
+        </div>
+
+        <!-- Bottom color selection bar -->
+        <div class="xp-paint-colors-bar">
+          <div class="xp-paint-color-preview" id="paint-color-preview" style="background-color: #000000;"></div>
+          <div class="xp-paint-colors-grid">
+            <!-- Row 1 colors -->
+            <div class="xp-paint-color-box" style="background-color: #000000;" onclick="selectPaintColor('#000000')">
+            </div>
+            <div class="xp-paint-color-box" style="background-color: #808080;" onclick="selectPaintColor('#808080')">
+            </div>
+            <div class="xp-paint-color-box" style="background-color: #800000;" onclick="selectPaintColor('#800000')">
+            </div>
+            <div class="xp-paint-color-box" style="background-color: #808000;" onclick="selectPaintColor('#808080')">
+            </div>
+            <div class="xp-paint-color-box" style="background-color: #008000;" onclick="selectPaintColor('#008000')">
+            </div>
+            <div class="xp-paint-color-box" style="background-color: #008080;" onclick="selectPaintColor('#008080')">
+            </div>
+            <div class="xp-paint-color-box" style="background-color: #000080;" onclick="selectPaintColor('#000080')">
+            </div>
+            <div class="xp-paint-color-box" style="background-color: #800080;" onclick="selectPaintColor('#800080')">
+            </div>
+            <div class="xp-paint-color-box" style="background-color: #808040;" onclick="selectPaintColor('#808040')">
+            </div>
+            <div class="xp-paint-color-box" style="background-color: #004040;" onclick="selectPaintColor('#004040')">
+            </div>
+            <div class="xp-paint-color-box" style="background-color: #0080FF;" onclick="selectPaintColor('#0080FF')">
+            </div>
+            <div class="xp-paint-color-box" style="background-color: #004080;" onclick="selectPaintColor('#004080')">
+            </div>
+            <div class="xp-paint-color-box" style="background-color: #4000FF;" onclick="selectPaintColor('#4000FF')">
+            </div>
+            <div class="xp-paint-color-box" style="background-color: #804000;" onclick="selectPaintColor('#804000')">
+            </div>
+            <!-- Row 2 colors -->
+            <div class="xp-paint-color-box" style="background-color: #FFFFFF;" onclick="selectPaintColor('#FFFFFF')">
+            </div>
+            <div class="xp-paint-color-box" style="background-color: #C0C0C0;" onclick="selectPaintColor('#C0C0C0')">
+            </div>
+            <div class="xp-paint-color-box" style="background-color: #FF0000;" onclick="selectPaintColor('#FF0000')">
+            </div>
+            <div class="xp-paint-color-box" style="background-color: #FFFF00;" onclick="selectPaintColor('#FFFF00')">
+            </div>
+            <div class="xp-paint-color-box" style="background-color: #00FF00;" onclick="selectPaintColor('#00FF00')">
+            </div>
+            <div class="xp-paint-color-box" style="background-color: #00FFFF;" onclick="selectPaintColor('#00FFFF')">
+            </div>
+            <div class="xp-paint-color-box" style="background-color: #0000FF;" onclick="selectPaintColor('#0000FF')">
+            </div>
+            <div class="xp-paint-color-box" style="background-color: #FF00FF;" onclick="selectPaintColor('#FF00FF')">
+            </div>
+            <div class="xp-paint-color-box" style="background-color: #FFFF80;" onclick="selectPaintColor('#FFFF80')">
+            </div>
+            <div class="xp-paint-color-box" style="background-color: #00FF80;" onclick="selectPaintColor('#00FF80')">
+            </div>
+            <div class="xp-paint-color-box" style="background-color: #80FFFF;" onclick="selectPaintColor('#80FFFF')">
+            </div>
+            <div class="xp-paint-color-box" style="background-color: #8080FF;" onclick="selectPaintColor('#8080FF')">
+            </div>
+            <div class="xp-paint-color-box" style="background-color: #FF8000;" onclick="selectPaintColor('#FF8000')">
+            </div>
+            <div class="xp-paint-color-box" style="background-color: #FF8080;" onclick="selectPaintColor('#FF8080')">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ==================== WINDOW 5: COMPONENTS ==================== -->
+    <div class="xp-window" id="window-components" style="left: 180px; top: 160px; width: 700px; display: none;">
+      <div class="xp-window-titlebar" onmousedown="dragStart(event, 'window-components')">
+        <div class="xp-window-title">
+          <img class="xp-window-title-icon" src="icons/Windows XP Icons/Control Panel.png" alt="">
+          Biblioteca de Exibição de Componentes
+        </div>
+        <div class="xp-window-controls">
+          <button class="xp-window-control-btn" onclick="minimizeWindow('window-components')">_</button>
+          <button class="xp-window-control-btn" onclick="maximizeWindow('window-components')">▢</button>
+          <button class="xp-window-control-btn close" onclick="closeWindow('window-components')">X</button>
+        </div>
+      </div>
+      <div class="xp-window-content">
+        <!-- Tab navigation inside window -->
+        <div class="xp-navbar" style="margin-bottom: var(--spacing-lg); border-radius: var(--radius-sm);">
+          <span class="xp-nav-link active" onclick="switchComponentTab(this, 'tab-buttons')">Botões & Links</span>
+          <span class="xp-nav-link" onclick="switchComponentTab(this, 'tab-cards')">Cards & Containers</span>
+          <span class="xp-nav-link" onclick="switchComponentTab(this, 'tab-forms')">Formulários & Campos</span>
+        </div>
+
+        <!-- Tab 1: Buttons & Links -->
+        <div id="tab-buttons" class="component-tab-content">
+          <div class="grid-12">
+            <div class="col-6">
+              <h3 class="font-ui-label-bold" style="margin-bottom: var(--spacing-sm);">Botão do Sistema (MS Sans Serif)</h3>
+              <div style="display: flex; flex-direction: column; gap: var(--spacing-md);">
+                <div>
+                  <button class="xp-btn-primary">OK</button>
+                  <span class="xp-caption">Estado Padrão</span>
+                </div>
+                <div>
+                  <button class="xp-btn-primary" disabled>Cancelar</button>
+                  <span class="xp-caption">Estado Desabilitado</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <h3 class="font-ui-label-bold" style="margin-bottom: var(--spacing-sm);">Botão Interativo Grande (Arial)
+              </h3>
+              <div
+                style="background-color: var(--primary-navy); padding: var(--spacing-md); border-radius: var(--radius-sm); text-align: center;">
+                <button class="xp-btn-large">EXPLORAR SISTEMA XP</button>
+                <span class="xp-caption" style="color: rgba(255,255,255,0.6);">Necessário fundo contrastante</span>
+              </div>
+            </div>
+            <div class="col-12" style="margin-top: var(--spacing-md);">
+              <h3 class="font-ui-label-bold" style="margin-bottom: var(--spacing-sm);">Links (Tahoma 11px)</h3>
+              <div style="display: flex; gap: var(--spacing-xl);">
+                <a href="#" class="xp-link" onclick="event.preventDefault()">Link Padrão</a>
+                <a href="#" class="xp-link" onclick="event.preventDefault()"
+                  style="color: var(--bright-blue); text-decoration: underline;">Estado Hover do Link</a>
+                <a href="#" class="xp-link" onclick="event.preventDefault()" style="color: var(--sky-blue)">Link Visitado</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Cards & Containers -->
+        <div id="tab-cards" class="component-tab-content" style="display: none;">
+          <div class="grid-12">
+            <div class="col-6">
+              <div class="xp-card">
+                <h4 class="font-ui-label-bold" style="margin-bottom: var(--spacing-xs);">Card Plano Padrão</h4>
+                <p class="font-ui-label" style="color: var(--text-secondary);">Sem sombra; Estrutura de borda limpa.</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="xp-card-elevated">
+                <h4 class="font-ui-label-bold" style="margin-bottom: var(--spacing-xs);">Card Elevado (Nível 1)</h4>
+                <p class="font-ui-label" style="color: var(--text-secondary);">Sombra sutil para separação visual de camadas.</p>
+              </div>
+            </div>
+            <div class="col-6" style="margin-top: var(--spacing-md);">
+              <div class="xp-container-subtle">
+                <h4 class="font-ui-label-bold" style="margin-bottom: var(--spacing-xs);">Container Neutro Sutil</h4>
+                <p class="font-ui-label" style="color: var(--text-secondary);">Fundo cinza claro com bordas finas.</p>
+              </div>
+            </div>
+            <div class="col-6" style="margin-top: var(--spacing-md);">
+              <div class="xp-container-blue">
+                <h4 class="font-ui-label-bold" style="color: var(--primary-navy); margin-bottom: var(--spacing-xs);">
+                  Container Azul de Destaque</h4>
+                <p class="font-ui-label" style="color: var(--deep-blue);">Fundo sutil na cor principal para recursos destacados.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Forms & Inputs -->
+        <div id="tab-forms" class="component-tab-content" style="display: none;">
+          <div class="grid-12">
+            <div class="col-6">
+              <div class="xp-form-group">
+                <label class="xp-label" for="field-default">Campo de Usuário</label>
+                <input type="text" class="xp-input" id="field-default" placeholder="Digite o usuário...">
+                <span class="xp-caption">Fonte Tahoma 16px; altura 32px.</span>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="xp-form-group">
+                <label class="xp-label" for="field-disabled">Variável do Sistema (Desabilitado)</label>
+                <input type="text" class="xp-input" id="field-disabled" disabled value="WINXP_ROOT_USER">
+                <span class="xp-caption">Fundo cinza; cursor não permitido.</span>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="xp-form-group">
+                <label class="xp-label" for="field-focused">Demonstração de Foco</label>
+                <input type="text" class="xp-input" id="field-focused" value="Visualização do estado com foco ativo"
+                  style="border-color: var(--bright-blue); box-shadow: 0px 0px 0px 2px var(--sky-blue);">
+                <span class="xp-caption">A borda de foco adiciona um contorno de 2px na cor Azul Celeste.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="xp-window" id="window-layout" style="left: 220px; top: 200px; width: 640px; display: none;">
+      <div class="xp-window-titlebar" onmousedown="dragStart(event, 'window-layout')">
+        <div class="xp-window-title">
+          <img class="xp-window-title-icon" src="icons/Windows XP Icons/Tweak UI.png" alt="">
+          Guia de Grade & Espaçamento
+        </div>
+        <div class="xp-window-controls">
+          <button class="xp-window-control-btn" onclick="minimizeWindow('window-layout')">_</button>
+          <button class="xp-window-control-btn" onclick="maximizeWindow('window-layout')">▢</button>
+          <button class="xp-window-control-btn close" onclick="closeWindow('window-layout')">X</button>
+        </div>
+      </div>
+      <div class="xp-window-content">
+        <h3 class="font-ui-label-bold" style="margin-bottom: var(--spacing-sm);">Espaçamento Base de Grade 4px</h3>
+        <p class="font-body" style="margin-bottom: var(--spacing-md);">
+          Todo o espaçamento, preenchimento (padding) e margens são estritamente mapeados para a escala base de 4px. Sem valores intermediários.
+        </p>
+
+        <div class="spacing-row">
+          <div class="spacing-label">xs (4px)</div>
+          <div class="spacing-bar" style="width: 4px;"></div>
+        </div>
+        <div class="spacing-row">
+          <div class="spacing-label">sm (8px)</div>
+          <div class="spacing-bar" style="width: 8px;"></div>
+        </div>
+        <div class="spacing-row">
+          <div class="spacing-label">md (12px)</div>
+          <div class="spacing-bar" style="width: 12px;"></div>
+        </div>
+        <div class="spacing-row">
+          <div class="spacing-label">lg (20px)</div>
+          <div class="spacing-bar" style="width: 20px;"></div>
+        </div>
+        <div class="spacing-row">
+          <div class="spacing-label">xl (24px)</div>
+          <div class="spacing-bar" style="width: 24px;"></div>
+        </div>
+        <div class="spacing-row">
+          <div class="spacing-label">xxl (28px)</div>
+          <div class="spacing-bar" style="width: 28px;"></div>
+        </div>
+
+        <h3 class="font-ui-label-bold" style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-sm);">
+          Grade de Desktop de 12 Colunas (Espaço/Gutter: 20px)</h3>
+        <div style="background: var(--light-gray); padding: var(--spacing-md); border-radius: var(--radius-sm);">
+          <div class="grid-12"
+            style="text-align: center; color: var(--bright-blue); font-size: 11px; font-weight: bold;">
+            <div class="col-4"
+              style="background: var(--light-blue-surface); border: 1px solid var(--sky-blue); padding: var(--spacing-xs);">
+              col-4</div>
+            <div class="col-4"
+              style="background: var(--light-blue-surface); border: 1px solid var(--sky-blue); padding: var(--spacing-xs);">
+              col-4</div>
+            <div class="col-4"
+              style="background: var(--light-blue-surface); border: 1px solid var(--sky-blue); padding: var(--spacing-xs);">
+              col-4</div>
+
+            <div class="col-8"
+              style="background: var(--light-blue-surface); border: 1px solid var(--sky-blue); padding: var(--spacing-xs);">
+              col-8</div>
+            <div class="col-4"
+              style="background: var(--light-blue-surface); border: 1px solid var(--sky-blue); padding: var(--spacing-xs);">
+              col-4</div>
+
+            <div class="col-12"
+              style="background: var(--light-blue-surface); border: 1px solid var(--sky-blue); padding: var(--spacing-xs);">
+              col-12 (Largura Completa)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ==================== WINDOW 7: DEPTH & SHADOWS ==================== -->
+    <div class="xp-window" id="window-depth" style="left: 260px; top: 240px; width: 620px; display: none;">
+      <div class="xp-window-titlebar" onmousedown="dragStart(event, 'window-depth')">
+        <div class="xp-window-title">
+          <img class="xp-window-title-icon" src="icons/Windows XP Icons/Appearance.png" alt="">
+          Níveis de Profundidade & Elevação
+        </div>
+        <div class="xp-window-controls">
+          <button class="xp-window-control-btn" onclick="minimizeWindow('window-depth')">_</button>
+          <button class="xp-window-control-btn" onclick="maximizeWindow('window-depth')">▢</button>
+          <button class="xp-window-control-btn close" onclick="closeWindow('window-depth')">X</button>
+        </div>
+      </div>
+      <div class="xp-window-content">
+        <p class="font-body" style="margin-bottom: var(--spacing-lg);">
+          O sistema de elevação utiliza sombras direcionais combinadas com as cores principais da marca para gerar profundidade realista sem poluir o layout retrô plano.
+        </p>
+
+        <div class="depth-stage">
+          <div class="depth-block level-0">
+            <span>Nível 0</span>
+            <span class="xp-caption" style="font-size: 8px;">Design Plano</span>
+          </div>
+
+          <div class="depth-block level-1">
+            <span>Nível 1</span>
+            <span class="xp-caption" style="font-size: 8px;">Contorno Sutil</span>
+          </div>
+
+          <div class="depth-block level-2">
+            <span>Nível 2</span>
+            <span class="xp-caption" style="font-size: 8px;">Depressão Inset</span>
+          </div>
+
+          <div class="depth-block level-3">
+            <span>Nível 3</span>
+            <span class="xp-caption" style="font-size: 8px;">Poço Profundo</span>
+          </div>
+
+          <div class="depth-block level-4">
+            <span>Nível 4</span>
+            <span class="xp-caption" style="font-size: 8px;">Camada Flutuante</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ==================== WINDOW 8: DO'S & DON'TS ==================== -->
+    <div class="xp-window" id="window-dos" style="left: 300px; top: 280px; width: 680px; display: none;">
+      <div class="xp-window-titlebar" onmousedown="dragStart(event, 'window-dos')">
+        <div class="xp-window-title">
+          <img class="xp-window-title-icon" src="icons/Windows XP Icons/Checklist.png" alt="">
+          Lista de Boas Práticas (Fazer e Não Fazer)
+        </div>
+        <div class="xp-window-controls">
+          <button class="xp-window-control-btn" onclick="minimizeWindow('window-dos')">_</button>
+          <button class="xp-window-control-btn" onclick="maximizeWindow('window-dos')">▢</button>
+          <button class="xp-window-control-btn close" onclick="closeWindow('window-dos')">X</button>
+        </div>
+      </div>
+      <div class="xp-window-content">
+        <div class="dos-and-donts-container">
+          <div class="do-card">
+            <div class="do-dont-title" style="color: #0E6251;">
+              <span>Fazer</span>
+            </div>
+            <ul class="do-dont-list">
+              <li>Use Verde Limão (#96FF96) especificamente para indicadores de sucesso.</li>
+              <li>Alinhe o espaçamento exclusivamente à grade base de 4px.</li>
+              <li>Limite o tamanho do raio das bordas dos componentes a 3px (elementos) e 5px (superfícies).</li>
+              <li>Empregue Tahoma para as hierarquias visuais principais.</li>
+              <li>Mantenha altas taxas de contraste de cor tipográfica (acima de 4,5:1).</li>
+            </ul>
+          </div>
+
+          <div class="dont-card">
+            <div class="do-dont-title" style="color: #7B241C;">
+              <span>Não Fazer</span>
+            </div>
+            <ul class="do-dont-list">
+              <li>Não misture fontes serifadas e não-serifadas dentro da mesma página de layout.</li>
+              <li>Não exceda a largura padrão de botões de desktop (94px) sem contexto direto.</li>
+              <li>Evite múltiplas camadas de sombra sobrepostas.</li>
+              <li>Não use sistemas de redimensionamento de texto fluidos ou relativos.</li>
+              <li>Nunca use cores de destaque como amarelo ou verde para fundos de containers amplos.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ==================== WINDOW 9: RESPONSIVE ==================== -->
+    <div class="xp-window" id="window-responsive" style="left: 340px; top: 320px; width: 660px; display: none;">
+      <div class="xp-window-titlebar" onmousedown="dragStart(event, 'window-responsive')">
+        <div class="xp-window-title">
+          <img class="xp-window-title-icon" src="icons/Windows XP Icons/Display Properties.png" alt="">
+          Simulador de Breakpoints Responsivos
+        </div>
+        <div class="xp-window-controls">
+          <button class="xp-window-control-btn" onclick="minimizeWindow('window-responsive')">_</button>
+          <button class="xp-window-control-btn" onclick="maximizeWindow('window-responsive')">▢</button>
+          <button class="xp-window-control-btn close" onclick="closeWindow('window-responsive')">X</button>
+        </div>
+      </div>
+      <div class="xp-window-content">
+        <p class="font-body" style="margin-bottom: var(--spacing-md);">
+          Simule como os componentes de layout respondem aos limites de tamanho de tela. Abaixo de `640px` de largura, as colunas colapsam em linhas únicas, o espaçamento diminui e os botões ocupam 100% de largura.
+        </p>
+
+        <!-- Width controllers -->
+        <div class="playground-controls">
+          <button class="xp-btn-primary" onclick="setSimulatedWidth('100%')">Desktop (100%)</button>
+          <button class="xp-btn-primary" onclick="setSimulatedWidth('750px')">Tablet (750px)</button>
+          <button class="xp-btn-primary" onclick="setSimulatedWidth('420px')">Celular (420px)</button>
+        </div>
+
+        <div class="responsive-playground">
+          <div class="playground-iframe-container" id="simulated-viewport" style="width: 100%;">
+            <!-- Simulated Layout Inside Container -->
+            <div style="padding: var(--spacing-md); background: var(--white);">
+              <!-- Top Navbar simulation -->
+              <div class="xp-navbar"
+                style="margin-bottom: var(--spacing-md); border-radius: var(--radius-sm); justify-content: space-between; height: 36px; padding: 0 10px;">
+                <span class="font-ui-label-bold" style="color: var(--white);">Layout do App XP</span>
+                <div style="display: flex; gap: var(--spacing-sm);">
+                  <span class="xp-nav-link active" style="padding: 4px 8px;">Início</span>
+                  <span class="xp-nav-link" style="padding: 4px 8px;">Status</span>
+                </div>
+              </div>
+
+              <!-- Grid Content simulation -->
+              <div class="grid-12" id="simulated-grid" style="grid-gap: var(--spacing-sm);">
+                <div class="col-8" id="simulated-col-left"
+                  style="background: var(--light-blue-surface); border: 1px solid var(--sky-blue); padding: var(--spacing-md); border-radius: var(--radius-md);">
+                  <h4 class="font-ui-label-bold" style="color: var(--primary-navy); margin-bottom: var(--spacing-xs);">
+                    Painel de Controle Principal</h4>
+                  <p class="font-ui-label" style="color: var(--deep-blue); margin-bottom: var(--spacing-sm);">Este segmento se ajusta para 100% de largura em telas menores.</p>
+
+                  <div class="xp-form-group">
+                    <label class="xp-label">Registro Rápido</label>
+                    <input type="text" class="xp-input" placeholder="Digite as informações aqui...">
+                  </div>
+                  <button class="xp-btn-primary" id="simulated-btn">Aplicar</button>
+                </div>
+
+                <div class="col-4" id="simulated-col-right"
+                  style="background: var(--light-gray); border: 1px solid var(--barely-gray); padding: var(--spacing-md); border-radius: var(--radius-md);">
+                  <h4 class="font-ui-label-bold" style="margin-bottom: var(--spacing-xs);">Informações Auxiliares</h4>
+                  <p class="font-caption">Sempre projete as interfaces pensando no celular primeiro (mobile-first) antes de estilizar os gutters da grade de desktop.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- ==================== THE START MENU POP-UP ==================== -->
+    <div class="xp-start-menu" id="start-menu">
+      <div class="xp-start-menu-header">
+        <div class="xp-start-menu-avatar">
+          <img src="icons/avatar.png" alt="Avatar">
+        </div>
+        <div class="xp-start-menu-username">Mitch Ivin</div>
+      </div>
+      <div class="xp-start-menu-orange-line"></div>
+      <div class="xp-start-menu-columns">
+        <!-- Left Column -->
+        <div class="xp-start-menu-left">
+          <div class="xp-start-menu-item" onclick="openWindow('window-overview')">
+            <img class="xp-start-menu-item-icon" src="icons/Windows XP Icons/Internet Explorer 6.png" alt="">
+            <div>
+              <div class="xp-start-menu-item-title">Meus Projetos</div>
+              <div class="xp-start-menu-item-desc">Ver meu trabalho</div>
+            </div>
+          </div>
+          <div class="xp-start-menu-item" onclick="openWindow('window-colors')">
+            <img class="xp-start-menu-item-icon" src="icons/Windows XP Icons/Sync.png" alt="">
+            <div>
+              <div class="xp-start-menu-item-title">Contato</div>
+              <div class="xp-start-menu-item-desc">Envie-me uma mensagem</div>
+            </div>
+          </div>
+          <div class="xp-start-menu-item" onclick="openWindow('window-typography')">
+            <img class="xp-start-menu-item-icon" src="icons/Windows XP Icons/Tour XP.png" alt="">
+            <div>
+              <div class="xp-start-menu-item-title">Sobre Mim</div>
+            </div>
+          </div>
+          <div class="xp-start-menu-item" onclick="openWindow('window-depth')">
+            <img class="xp-start-menu-item-icon" src="icons/Windows XP Icons/My Resume.png" alt="">
+            <div>
+              <div class="xp-start-menu-item-title">Meu Currículo</div>
+            </div>
+          </div>
+          <div class="xp-start-menu-item" onclick="openWindow('window-components')">
+            <img class="xp-start-menu-item-icon" src="icons/Windows XP Icons/iPod Classic.png" alt="">
+            <div>
+              <div class="xp-start-menu-item-title">iPod Classic</div>
+            </div>
+          </div>
+          <div class="xp-start-menu-item" onclick="openWindow('window-responsive')">
+            <img class="xp-start-menu-item-icon" src="icons/Windows XP Icons/Windows Picture and Fax Viewer.png" alt="">
+            <div>
+              <div class="xp-start-menu-item-title">Visualizador de Imagens</div>
+            </div>
+          </div>
+          <div class="xp-start-menu-item" onclick="openWindow('window-dos')">
+            <img class="xp-start-menu-item-icon" src="icons/Windows XP Icons/Windows Media Player 10.png" alt="">
+            <div>
+              <div class="xp-start-menu-item-title">Media Player</div>
+            </div>
+          </div>
+          <div class="xp-start-menu-all-programs-divider"></div>
+          <div class="xp-start-menu-all-programs" id="all-programs-btn">
+            <span class="xp-start-menu-all-programs-text">Todos os Programas</span>
+            <div class="xp-start-menu-all-programs-arrow"></div>
+          </div>
+        </div>
+
+        <!-- Default Right Column -->
+        <div class="xp-start-menu-right" id="start-menu-right-default">
+          <div class="xp-start-menu-right-item" onclick="window.open('https://instagram.com', '_blank')">
+            <img class="xp-start-menu-right-icon" src="icons/Windows XP Icons/Instagram.png" alt="">
+            Instagram
+          </div>
+          <div class="xp-start-menu-right-item" onclick="window.open('https://github.com', '_blank')">
+            <img class="xp-start-menu-right-icon" src="icons/Windows XP Icons/Github.png" alt="">
+            Github
+          </div>
+          <div class="xp-start-menu-right-item" onclick="window.open('https://linkedin.com', '_blank')">
+            <img class="xp-start-menu-right-icon" src="icons/Windows XP Icons/LinkedIn.png" alt="">
+            LinkedIn
+          </div>
+          <div class="xp-start-menu-right-item" onclick="openWindow('window-colors')">
+            <img class="xp-start-menu-right-icon" src="icons/Windows XP Icons/Recent Documents.png" alt="">
+            Documentos Recentes
+            <div class="xp-start-menu-right-submenu-arrow"></div>
+          </div>
+          <div class="xp-start-menu-right-item" onclick="openWindow('window-layout')">
+            <img class="xp-start-menu-right-icon" src="icons/Windows XP Icons/Command Prompt.png" alt="">
+            Prompt de Comando
+          </div>
+          <div class="xp-start-menu-right-item" onclick="openWindow('window-paint')">
+            <img class="xp-start-menu-right-icon" src="icons/Windows XP Icons/Paint.png" alt="">
+            Paint
+          </div>
+          <div class="xp-start-menu-right-item" onclick="openWindow('window-depth')">
+            <img class="xp-start-menu-right-icon" src="icons/Windows XP Icons/Game Boy Color.png" alt="">
+            Game Boy Color
+          </div>
+          <div class="xp-start-menu-right-item" onclick="openWindow('window-components')">
+            <img class="xp-start-menu-right-icon" src="icons/Windows XP Icons/DoodleDev.png" alt="">
+            DoodleDev
+          </div>
+          <div class="xp-start-menu-right-item" onclick="openWindow('window-dos')">
+            <img class="xp-start-menu-right-icon" src="icons/Windows XP Icons/World of Warcraft.png" alt="">
+            World of Warcraft
+          </div>
+        </div>
+
+        <!-- Programs Sub-menu Panel (replaces right column) -->
+        <div class="xp-start-menu-programs-panel" id="start-menu-programs-panel" style="display: none;">
+          <div class="xp-programs-item" onclick="openWindow('window-typography')">
+            <img class="xp-programs-icon" src="icons/Windows XP Icons/Tour XP.png" alt="">
+            Sobre Mim
+          </div>
+          <div class="xp-programs-item" onclick="openWindow('window-colors')">
+            <img class="xp-programs-icon" src="icons/Windows XP Icons/Sync.png" alt="">
+            Contato
+          </div>
+          <div class="xp-programs-item" onclick="openWindow('window-overview')">
+            <img class="xp-programs-icon" src="icons/Windows XP Icons/Internet Explorer 6.png" alt="">
+            Meus Projetos
+          </div>
+          <div class="xp-programs-item" onclick="openWindow('window-depth')">
+            <img class="xp-programs-icon" src="icons/Windows XP Icons/My Resume.png" alt="">
+            Meu Currículo
+          </div>
+          
+          <div class="xp-programs-divider"></div>
+          
+          <div class="xp-programs-item" onclick="window.open('https://github.com', '_blank')">
+            <img class="xp-programs-icon" src="icons/Windows XP Icons/Github.png" alt="">
+            Github
+          </div>
+          <div class="xp-programs-item" onclick="window.open('https://instagram.com', '_blank')">
+            <img class="xp-programs-icon" src="icons/Windows XP Icons/Instagram.png" alt="">
+            Instagram
+          </div>
+          <div class="xp-programs-item" onclick="window.open('https://linkedin.com', '_blank')">
+            <img class="xp-programs-icon" src="icons/Windows XP Icons/LinkedIn.png" alt="">
+            LinkedIn
+          </div>
+          
+          <div class="xp-programs-divider"></div>
+          
+          <div class="xp-programs-item" onclick="openWindow('window-layout')">
+            <img class="xp-programs-icon" src="icons/Windows XP Icons/Command Prompt.png" alt="">
+            Prompt de Comando
+          </div>
+          <div class="xp-programs-item" onclick="openWindow('window-components')">
+            <img class="xp-programs-icon" src="icons/Windows XP Icons/DoodleDev.png" alt="">
+            DoodleDev
+          </div>
+          <div class="xp-programs-item" onclick="openWindow('window-depth')">
+            <img class="xp-programs-icon" src="icons/Windows XP Icons/Game Boy Color.png" alt="">
+            Game Boy Color
+          </div>
+          <div class="xp-programs-item" onclick="openWindow('window-responsive')">
+            <img class="xp-programs-icon" src="icons/Windows XP Icons/Windows Picture and Fax Viewer.png" alt="">
+            Visualizador de Imagens
+          </div>
+          <div class="xp-programs-item" onclick="openWindow('window-components')">
+            <img class="xp-programs-icon" src="icons/Windows XP Icons/iPod Classic.png" alt="">
+            iPod Classic
+          </div>
+          <div class="xp-programs-item" onclick="openWindow('window-dos')">
+            <img class="xp-programs-icon" src="icons/Windows XP Icons/Windows Media Player 10.png" alt="">
+            Media Player
+          </div>
+          <div class="xp-programs-item" onclick="openWindow('window-paint')">
+            <img class="xp-programs-icon" src="icons/Windows XP Icons/Paint.png" alt="">
+            Paint
+          </div>
+          <div class="xp-programs-item" onclick="openWindow('window-dos')">
+            <img class="xp-programs-icon" src="icons/Windows XP Icons/World of Warcraft.png" alt="">
+            World of Warcraft
+          </div>
+        </div>
+      </div>
+      <div class="xp-start-menu-footer" id="start-menu-footer">
+        <button class="xp-footer-btn log-off" onclick="toggleStartMenu()">
+          <img src="icons/Windows XP Icons/Logout.png" alt="">
+          <span>Efetuar logoff</span>
+        </button>
+        <button class="xp-footer-btn shut-down" onclick="toggleStartMenu()">
+          <img src="icons/Windows XP Icons/Power.png" alt="">
+          <span>Desligar</span>
+        </button>
+      </div>
+    </div>
+
+
+    <!-- ==================== THE SYSTEM TASKBAR ==================== -->
+    <div class="xp-taskbar">
+      <!-- Start Button with custom sprite background representation -->
+      <button class="xp-start-btn" onclick="toggleStartMenu()">iniciar</button>
+
+      <!-- Quick Launch Bar -->
+      <div class="xp-quick-launch">
+        <div class="xp-quick-launch-divider"></div>
+        <div class="xp-quick-launch-item" onclick="resetWindowPositions(); openWindow('window-overview')"
+          title="Mostrar Área de Trabalho">
+          <img src="icons/Windows XP Icons/Desktop.png" alt="Mostrar Área de Trabalho">
+        </div>
+        <div class="xp-quick-launch-item" onclick="openWindow('window-typography')" title="Internet Explorer">
+          <img src="icons/Windows XP Icons/Internet Explorer 6.png" alt="Internet Explorer">
+        </div>
+        <div class="xp-quick-launch-item" onclick="openWindow('window-colors')" title="Meus Documentos">
+          <img src="icons/Windows XP Icons/My Documents.png" alt="Meus Documentos">
+        </div>
+        <div class="xp-quick-launch-item" onclick="openWindow('window-paint')" title="Paint">
+          <img src="icons/Windows XP Icons/Paint.png" alt="Paint">
+        </div>
+        <div class="xp-quick-launch-divider"></div>
+      </div>
+
+      <!-- Taskbar Window Handles (JS will inject handles here dynamically) -->
+      <div class="xp-taskbar-tasks" id="taskbar-handles"></div>
+
+      <!-- System Notification Tray / Clock -->
+      <div class="xp-taskbar-clock">
+        <!-- Sound SVG Icon -->
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        </svg>
+        <span id="system-time">12:00</span>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
