@@ -39,6 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const startBtn = document.querySelector('.xp-start-btn');
     if (startMenu.style.display === 'flex' && !startMenu.contains(e.target) && !startBtn.contains(e.target)) {
       startMenu.style.display = 'none';
+      if (startBtn) startBtn.classList.remove('active');
     }
 
     // 2. Limpa a seleção do ícone ao clicar no plano de fundo do desktop
@@ -103,6 +104,8 @@ function focusWindow(id) {
   // Fecha o menu iniciar
   const startMenu = document.getElementById('start-menu');
   if (startMenu) startMenu.style.display = 'none';
+  const startBtn = document.querySelector('.xp-start-btn');
+  if (startBtn) startBtn.classList.remove('active');
 
   updateTaskbarHandles();
 }
@@ -224,15 +227,19 @@ function resetWindowPositions() {
 
   const startMenu = document.getElementById('start-menu');
   if (startMenu) startMenu.style.display = 'none';
+  const startBtn = document.querySelector('.xp-start-btn');
+  if (startBtn) startBtn.classList.remove('active');
 }
 
 // Alterna a exibição do pop-up do Menu Iniciar
 function toggleStartMenu() {
   const startMenu = document.getElementById('start-menu');
+  const startBtn = document.querySelector('.xp-start-btn');
   if (!startMenu) return;
   
   if (startMenu.style.display === 'flex') {
     startMenu.style.display = 'none';
+    if (startBtn) startBtn.classList.remove('active');
   } else {
     // Redefine para a visualização padrão do lado direito sempre que abrir
     const allProgramsBtn = document.getElementById('all-programs-btn');
@@ -244,6 +251,7 @@ function toggleStartMenu() {
       allProgramsBtn.classList.remove('active');
     }
     startMenu.style.display = 'flex';
+    if (startBtn) startBtn.classList.add('active');
   }
 }
 

@@ -61,14 +61,15 @@
 
       <!-- Icon 8: Configurações de Vídeo (Simulador Responsivo) -->
       <div class="xp-desktop-icon" onclick="selectIcon(this, event)" ondblclick="openWindow('window-responsive')">
-        <img class="xp-desktop-icon-img" src="icons/Windows XP Icons/Display Properties.png" alt="Configurações de Vídeo">
+        <img class="xp-desktop-icon-img" src="icons/Windows XP Icons/Display Properties.png"
+          alt="Configurações de Vídeo">
         <span class="xp-desktop-icon-text">Propriedades de Vídeo</span>
       </div>
     </div>
 
 
     <!-- ==================== WINDOW 1: OVERVIEW ==================== -->
-    <div class="xp-window active" id="window-overview" style="left: 60px; top: 40px; width: 620px;">
+    <div class="xp-window" id="window-overview" style="left: 60px; top: 40px; width: 620px; display: none;">
       <div class="xp-window-titlebar" onmousedown="dragStart(event, 'window-overview')">
         <div class="xp-window-title">
           <img class="xp-window-title-icon" src="icons/Windows XP Icons/My Computer.png" alt="">
@@ -89,11 +90,14 @@
       <div class="xp-window-content">
         <h2 class="font-h2" style="color: var(--primary-navy); margin-bottom: var(--spacing-md);">MitchIvin XP</h2>
         <p class="font-body" style="margin-bottom: var(--spacing-lg);">
-          MitchIvin XP incorpora a estética nostálgica do design de sistemas operacionais do início dos anos 2000, reimaginada sob a ótica de um designer visual moderno. O sistema celebra cores primárias fortes — azuis vívidos, laranjas e verdes limão — contrastando com tons neutros marcantes e brancos cristalinos.
+          MitchIvin XP incorpora a estética nostálgica do design de sistemas operacionais do início dos anos 2000,
+          reimaginada sob a ótica de um designer visual moderno. O sistema celebra cores primárias fortes — azuis
+          vívidos, laranjas e verdes limão — contrastando com tons neutros marcantes e brancos cristalinos.
         </p>
 
         <div class="xp-container-blue" style="margin-bottom: var(--spacing-lg);">
-          <h3 class="font-ui-label-bold" style="color: var(--primary-navy); margin-bottom: var(--spacing-xs);">DESIGN EM RESUMO</h3>
+          <h3 class="font-ui-label-bold" style="color: var(--primary-navy); margin-bottom: var(--spacing-xs);">DESIGN EM
+            RESUMO</h3>
           <ul class="font-body" style="list-style-type: square; padding-left: 20px;">
             <li>Tahoma para textos altamente legíveis; MS Sans Serif para botões do sistema</li>
             <li>Espaçamento baseado em grade de 4px para alinhamento</li>
@@ -103,7 +107,8 @@
         </div>
 
         <p class="font-body">
-          Este sistema equilibra geometrias retrô pixel-perfect com sofisticação contemporânea, criando uma interface que parece divertidamente familiar e intencionalmente refinada.
+          Este sistema equilibra geometrias retrô pixel-perfect com sofisticação contemporânea, criando uma interface
+          que parece divertidamente familiar e intencionalmente refinada.
         </p>
       </div>
     </div>
@@ -197,7 +202,8 @@
             </div>
           </div>
         </div>
-        <p class="font-caption" style="margin-top: var(--spacing-md);">* Clique em qualquer amostra para copiar seu valor HEX para a área de transferência.</p>
+        <p class="font-caption" style="margin-top: var(--spacing-md);">* Clique em qualquer amostra para copiar seu
+          valor HEX para a área de transferência.</p>
       </div>
     </div>
 
@@ -241,7 +247,8 @@
               <td style="padding: var(--spacing-sm); font-size: 11px; font-weight: bold;">Texto de Corpo</td>
               <td style="padding: var(--spacing-sm); font-size: 11px; color: var(--text-secondary);">Tahoma, 16px, 400
               </td>
-              <td style="padding: var(--spacing-sm); font-size: 16px;">Texto de corpo legível e confortável em Tahoma.</td>
+              <td style="padding: var(--spacing-sm); font-size: 16px;">Texto de corpo legível e confortável em Tahoma.
+              </td>
             </tr>
             <tr style="border-bottom: 1px solid var(--barely-gray);">
               <td style="padding: var(--spacing-sm); font-size: 11px; font-weight: bold;">Rótulo de UI</td>
@@ -343,9 +350,12 @@
             <div class="xp-paint-sizes">
               <div class="xp-paint-size-option active" data-size="1" onclick="selectPaintSize(1, this)"
                 title="Tamanho 1px"></div>
-              <div class="xp-paint-size-option" data-size="3" onclick="selectPaintSize(3, this)" title="Tamanho 3px"></div>
-              <div class="xp-paint-size-option" data-size="5" onclick="selectPaintSize(5, this)" title="Tamanho 5px"></div>
-              <div class="xp-paint-size-option" data-size="8" onclick="selectPaintSize(8, this)" title="Tamanho 8px"></div>
+              <div class="xp-paint-size-option" data-size="3" onclick="selectPaintSize(3, this)" title="Tamanho 3px">
+              </div>
+              <div class="xp-paint-size-option" data-size="5" onclick="selectPaintSize(5, this)" title="Tamanho 5px">
+              </div>
+              <div class="xp-paint-size-option" data-size="8" onclick="selectPaintSize(8, this)" title="Tamanho 8px">
+              </div>
             </div>
           </div>
 
@@ -448,7 +458,8 @@
         <div id="tab-buttons" class="component-tab-content">
           <div class="grid-12">
             <div class="col-6">
-              <h3 class="font-ui-label-bold" style="margin-bottom: var(--spacing-sm);">Botão do Sistema (MS Sans Serif)</h3>
+              <h3 class="font-ui-label-bold" style="margin-bottom: var(--spacing-sm);">Botão do Sistema (MS Sans Serif)
+              </h3>
               <div style="display: flex; flex-direction: column; gap: var(--spacing-md);">
                 <div>
                   <button class="xp-btn-primary">OK</button>
@@ -475,7 +486,8 @@
                 <a href="#" class="xp-link" onclick="event.preventDefault()">Link Padrão</a>
                 <a href="#" class="xp-link" onclick="event.preventDefault()"
                   style="color: var(--bright-blue); text-decoration: underline;">Estado Hover do Link</a>
-                <a href="#" class="xp-link" onclick="event.preventDefault()" style="color: var(--sky-blue)">Link Visitado</a>
+                <a href="#" class="xp-link" onclick="event.preventDefault()" style="color: var(--sky-blue)">Link
+                  Visitado</a>
               </div>
             </div>
           </div>
@@ -493,7 +505,8 @@
             <div class="col-6">
               <div class="xp-card-elevated">
                 <h4 class="font-ui-label-bold" style="margin-bottom: var(--spacing-xs);">Card Elevado (Nível 1)</h4>
-                <p class="font-ui-label" style="color: var(--text-secondary);">Sombra sutil para separação visual de camadas.</p>
+                <p class="font-ui-label" style="color: var(--text-secondary);">Sombra sutil para separação visual de
+                  camadas.</p>
               </div>
             </div>
             <div class="col-6" style="margin-top: var(--spacing-md);">
@@ -506,7 +519,8 @@
               <div class="xp-container-blue">
                 <h4 class="font-ui-label-bold" style="color: var(--primary-navy); margin-bottom: var(--spacing-xs);">
                   Container Azul de Destaque</h4>
-                <p class="font-ui-label" style="color: var(--deep-blue);">Fundo sutil na cor principal para recursos destacados.</p>
+                <p class="font-ui-label" style="color: var(--deep-blue);">Fundo sutil na cor principal para recursos
+                  destacados.</p>
               </div>
             </div>
           </div>
@@ -559,7 +573,8 @@
       <div class="xp-window-content">
         <h3 class="font-ui-label-bold" style="margin-bottom: var(--spacing-sm);">Espaçamento Base de Grade 4px</h3>
         <p class="font-body" style="margin-bottom: var(--spacing-md);">
-          Todo o espaçamento, preenchimento (padding) e margens são estritamente mapeados para a escala base de 4px. Sem valores intermediários.
+          Todo o espaçamento, preenchimento (padding) e margens são estritamente mapeados para a escala base de 4px. Sem
+          valores intermediários.
         </p>
 
         <div class="spacing-row">
@@ -633,7 +648,8 @@
       </div>
       <div class="xp-window-content">
         <p class="font-body" style="margin-bottom: var(--spacing-lg);">
-          O sistema de elevação utiliza sombras direcionais combinadas com as cores principais da marca para gerar profundidade realista sem poluir o layout retrô plano.
+          O sistema de elevação utiliza sombras direcionais combinadas com as cores principais da marca para gerar
+          profundidade realista sem poluir o layout retrô plano.
         </p>
 
         <div class="depth-stage">
@@ -726,7 +742,8 @@
       </div>
       <div class="xp-window-content">
         <p class="font-body" style="margin-bottom: var(--spacing-md);">
-          Simule como os componentes de layout respondem aos limites de tamanho de tela. Abaixo de `640px` de largura, as colunas colapsam em linhas únicas, o espaçamento diminui e os botões ocupam 100% de largura.
+          Simule como os componentes de layout respondem aos limites de tamanho de tela. Abaixo de `640px` de largura,
+          as colunas colapsam em linhas únicas, o espaçamento diminui e os botões ocupam 100% de largura.
         </p>
 
         <!-- Width controllers -->
@@ -756,7 +773,8 @@
                   style="background: var(--light-blue-surface); border: 1px solid var(--sky-blue); padding: var(--spacing-md); border-radius: var(--radius-md);">
                   <h4 class="font-ui-label-bold" style="color: var(--primary-navy); margin-bottom: var(--spacing-xs);">
                     Painel de Controle Principal</h4>
-                  <p class="font-ui-label" style="color: var(--deep-blue); margin-bottom: var(--spacing-sm);">Este segmento se ajusta para 100% de largura em telas menores.</p>
+                  <p class="font-ui-label" style="color: var(--deep-blue); margin-bottom: var(--spacing-sm);">Este
+                    segmento se ajusta para 100% de largura em telas menores.</p>
 
                   <div class="xp-form-group">
                     <label class="xp-label">Registro Rápido</label>
@@ -768,14 +786,15 @@
                 <div class="col-4" id="simulated-col-right"
                   style="background: var(--light-gray); border: 1px solid var(--barely-gray); padding: var(--spacing-md); border-radius: var(--radius-md);">
                   <h4 class="font-ui-label-bold" style="margin-bottom: var(--spacing-xs);">Informações Auxiliares</h4>
-                  <p class="font-caption">Sempre projete as interfaces pensando no celular primeiro (mobile-first) antes de estilizar os gutters da grade de desktop.</p>
+                  <p class="font-caption">Sempre projete as interfaces pensando no celular primeiro (mobile-first) antes
+                    de estilizar os gutters da grade de desktop.</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
 
     <!-- ==================== THE START MENU POP-UP ==================== -->
@@ -784,7 +803,7 @@
         <div class="xp-start-menu-avatar">
           <img src="icons/avatar.png" alt="Avatar">
         </div>
-        <div class="xp-start-menu-username">Mitch Ivin</div>
+        <div class="xp-start-menu-username">Zé dos Dados</div>
       </div>
       <div class="xp-start-menu-orange-line"></div>
       <div class="xp-start-menu-columns">
@@ -900,9 +919,9 @@
             <img class="xp-programs-icon" src="icons/Windows XP Icons/My Resume.png" alt="">
             Meu Currículo
           </div>
-          
+
           <div class="xp-programs-divider"></div>
-          
+
           <div class="xp-programs-item" onclick="window.open('https://github.com', '_blank')">
             <img class="xp-programs-icon" src="icons/Windows XP Icons/Github.png" alt="">
             Github
@@ -915,9 +934,9 @@
             <img class="xp-programs-icon" src="icons/Windows XP Icons/LinkedIn.png" alt="">
             LinkedIn
           </div>
-          
+
           <div class="xp-programs-divider"></div>
-          
+
           <div class="xp-programs-item" onclick="openWindow('window-layout')">
             <img class="xp-programs-icon" src="icons/Windows XP Icons/Command Prompt.png" alt="">
             Prompt de Comando

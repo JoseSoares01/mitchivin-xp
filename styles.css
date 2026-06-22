@@ -46,9 +46,9 @@
   --shadow-level-1: 0px 2px 8px rgba(0, 0, 0, 0.1);
   --shadow-level-2: rgba(10, 36, 106, 0.4) 0px -2px 3px 0px inset;
   --shadow-level-3: rgba(0, 0, 0, 0.3) 0px 6px 10px -6px inset;
-  --shadow-level-4: rgba(0, 0, 0, 0.4) 0px -2px 8px 0px, 
-                     rgba(0, 0, 0, 0.4) 2px 4px 10px 0px, 
-                     rgba(255, 255, 255, 0.08) 0px 0px 55px 0px inset;
+  --shadow-level-4: rgba(0, 0, 0, 0.4) 0px -2px 8px 0px,
+    rgba(0, 0, 0, 0.4) 2px 4px 10px 0px,
+    rgba(255, 255, 255, 0.08) 0px 0px 55px 0px inset;
 }
 
 /* 2. Global Resets & Base Styles */
@@ -60,7 +60,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
   font-family: Tahoma, Arial, sans-serif;
@@ -80,16 +81,19 @@ html, body {
   width: var(--spacing-md);
   height: var(--spacing-md);
 }
+
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
   border: 1px solid #d2d2d2;
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--light-blue-surface);
   border: 2px solid #f1f1f1;
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-level-2);
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--sky-blue);
 }
@@ -164,7 +168,7 @@ html, body {
   font-size: 11px;
   font-weight: 400;
   padding: 0px;
-  height: 30px;
+  height: 10px;
   width: 94px;
   border-radius: var(--radius-sm);
   border: 0px none;
@@ -353,7 +357,8 @@ html, body {
 
 .xp-nav-link {
   background: rgba(0, 0, 0, 0);
-  color: var(--white); /* Spec says text color #222222, but on a Navy navbar #FFFFFF is required for accessibility. Let's make it #FFFFFF default or follow spec fallback */
+  color: var(--white);
+  /* Spec says text color #222222, but on a Navy navbar #FFFFFF is required for accessibility. Let's make it #FFFFFF default or follow spec fallback */
   font-family: Tahoma, Arial, sans-serif;
   font-size: 11px;
   font-weight: 400;
@@ -471,7 +476,7 @@ html, body {
   width: 48px;
   height: 48px;
   margin-bottom: var(--spacing-sm);
-  filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.3));
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .xp-desktop-icon-text {
@@ -500,7 +505,7 @@ html, body {
 
 .xp-window.active {
   z-index: 100;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border-color: var(--bright-blue);
 }
 
@@ -515,7 +520,7 @@ html, body {
   cursor: move;
   user-select: none;
   border-radius: 3px 3px 0 0;
-  border-top: 1px solid rgba(255,255,255,0.4);
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .xp-window.active .xp-window-titlebar {
@@ -526,7 +531,7 @@ html, body {
   font-family: Tahoma, sans-serif;
   font-size: 11px;
   font-weight: 700;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
@@ -555,7 +560,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .xp-window-control-btn:hover {
@@ -616,16 +621,16 @@ html, body {
 
 .xp-start-btn {
   background: url('start_button_sprite.png') no-repeat 0 0;
-  background-size: 78px 126px;
-  width: 78px;
-  height: 42px;
+  background-size: 103px 189px;
+  width: 103px;
+  height: 63px;
   border: 0px none;
   box-shadow: none;
   border-radius: 0;
   cursor: pointer;
   outline: none;
   padding: 0;
-  margin: -2px 0 0 -6px;
+  margin: -0.95px 0 0 -13px;
   font-size: 0;
   color: transparent;
   display: flex;
@@ -635,12 +640,12 @@ html, body {
 }
 
 .xp-start-btn:hover {
-  background-position: 0 -42px;
-  filter: none;
+  background-position: 0 -63px;
 }
 
+.xp-start-btn.active,
 .xp-start-btn:active {
-  background-position: 0 -84px;
+  background-position: 0 -126px;
 }
 
 .xp-taskbar-tasks {
@@ -714,12 +719,12 @@ html, body {
 
 .xp-quick-launch-item:hover {
   background: rgba(255, 255, 255, 0.15);
-  box-shadow: 1px 1px 0px var(--white) inset, -1px -1px 0px rgba(0,0,0,0.1) inset;
+  box-shadow: 1px 1px 0px var(--white) inset, -1px -1px 0px rgba(0, 0, 0, 0.1) inset;
 }
 
 .xp-quick-launch-item:active {
   background: rgba(0, 0, 0, 0.15);
-  box-shadow: 1px 1px 0px rgba(0,0,0,0.2) inset;
+  box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2) inset;
 }
 
 .xp-taskbar-clock {
@@ -732,7 +737,7 @@ html, body {
   padding: 0 var(--spacing-lg);
   font-size: 11px;
   gap: var(--spacing-sm);
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 /* Start Menu Pop-up */
@@ -745,7 +750,7 @@ html, body {
   background: var(--white);
   border: 2px solid var(--deep-blue);
   border-radius: 5px 5px 0 0;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   display: none;
   flex-direction: column;
   z-index: 500;
@@ -773,7 +778,7 @@ html, body {
   height: 42px;
   border-radius: var(--radius-sm);
   border: 2px solid var(--white);
-  box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -791,7 +796,7 @@ html, body {
   font-weight: bold;
   font-size: 14px;
   color: var(--white);
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .xp-start-menu-columns {
@@ -850,7 +855,7 @@ html, body {
 
 .xp-start-menu-all-programs-divider {
   height: 1px;
-  background: linear-gradient(90deg, #d3d3d3 0%, rgba(211,211,211,0) 100%);
+  background: linear-gradient(90deg, #d3d3d3 0%, rgba(211, 211, 211, 0) 100%);
   margin: 4px 8px;
 }
 
@@ -1023,12 +1028,29 @@ html, body {
   grid-gap: var(--spacing-lg);
 }
 
-.col-12 { grid-column: span 12; }
-.col-8 { grid-column: span 8; }
-.col-6 { grid-column: span 6; }
-.col-4 { grid-column: span 4; }
-.col-3 { grid-column: span 3; }
-.col-2 { grid-column: span 2; }
+.col-12 {
+  grid-column: span 12;
+}
+
+.col-8 {
+  grid-column: span 8;
+}
+
+.col-6 {
+  grid-column: span 6;
+}
+
+.col-4 {
+  grid-column: span 4;
+}
+
+.col-3 {
+  grid-column: span 3;
+}
+
+.col-2 {
+  grid-column: span 2;
+}
 
 /* Color Swatches Grid */
 .color-swatch-grid {
@@ -1113,11 +1135,25 @@ html, body {
   transition: transform 0.3s ease;
 }
 
-.depth-block.level-0 { box-shadow: var(--shadow-level-0); }
-.depth-block.level-1 { box-shadow: var(--shadow-level-1); }
-.depth-block.level-2 { box-shadow: var(--shadow-level-2); border-color: transparent; }
-.depth-block.level-3 { box-shadow: var(--shadow-level-3); border-color: transparent; }
-.depth-block.level-4 { 
+.depth-block.level-0 {
+  box-shadow: var(--shadow-level-0);
+}
+
+.depth-block.level-1 {
+  box-shadow: var(--shadow-level-1);
+}
+
+.depth-block.level-2 {
+  box-shadow: var(--shadow-level-2);
+  border-color: transparent;
+}
+
+.depth-block.level-3 {
+  box-shadow: var(--shadow-level-3);
+  border-color: transparent;
+}
+
+.depth-block.level-4 {
   box-shadow: var(--shadow-level-4);
   background: linear-gradient(135deg, var(--white) 0%, var(--light-blue-surface) 100%);
   border: none;
@@ -1132,14 +1168,16 @@ html, body {
 
 .do-card {
   border-top: 4px solid var(--lime-green);
-  background: #E8F8F5; /* Soft success tint */
+  background: #E8F8F5;
+  /* Soft success tint */
   border-radius: var(--radius-md);
   padding: var(--spacing-lg);
 }
 
 .dont-card {
   border-top: 4px solid #FF6464;
-  background: #FDF2F2; /* Soft error tint */
+  background: #FDF2F2;
+  /* Soft error tint */
   border-radius: var(--radius-md);
   padding: var(--spacing-lg);
 }
@@ -1294,14 +1332,30 @@ html, body {
   position: absolute;
 }
 
-.xp-paint-size-option[data-size="1"]::after { width: 2px; height: 2px; }
-.xp-paint-size-option[data-size="3"]::after { width: 4px; height: 4px; }
-.xp-paint-size-option[data-size="5"]::after { width: 6px; height: 6px; }
-.xp-paint-size-option[data-size="8"]::after { width: 9px; height: 9px; }
+.xp-paint-size-option[data-size="1"]::after {
+  width: 2px;
+  height: 2px;
+}
+
+.xp-paint-size-option[data-size="3"]::after {
+  width: 4px;
+  height: 4px;
+}
+
+.xp-paint-size-option[data-size="5"]::after {
+  width: 6px;
+  height: 6px;
+}
+
+.xp-paint-size-option[data-size="8"]::after {
+  width: 9px;
+  height: 9px;
+}
 
 .xp-paint-size-option.active {
   background: #0A246A;
 }
+
 .xp-paint-size-option.active::after {
   background: #fff;
 }
@@ -1309,7 +1363,7 @@ html, body {
 .xp-paint-canvas-area {
   flex: 1;
   background: #808080;
-  box-shadow: 2px 2px 4px rgba(0,0,0,0.5) inset;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) inset;
   padding: var(--spacing-lg);
   overflow: auto;
   display: flex;
@@ -1441,9 +1495,15 @@ html, body {
 
 /* Tablet (640px to 1023px) */
 @media (max-width: 1023px) {
-  .col-8, .col-6, .col-4, .col-3, .col-2 {
+
+  .col-8,
+  .col-6,
+  .col-4,
+  .col-3,
+  .col-2 {
     grid-column: span 6;
   }
+
   .xp-window {
     min-width: 90%;
   }
@@ -1454,14 +1514,18 @@ html, body {
   body {
     overflow-y: auto;
   }
+
   .xp-desktop {
     height: auto;
     min-height: 100vh;
     overflow-y: auto;
   }
+
   .xp-desktop-icons {
-    display: none; /* Hide icons on mobile screen directly, stack windows */
+    display: none;
+    /* Hide icons on mobile screen directly, stack windows */
   }
+
   .xp-window {
     position: relative !important;
     left: 0 !important;
@@ -1471,25 +1535,36 @@ html, body {
     margin-bottom: var(--spacing-md);
     box-shadow: none;
   }
+
   .xp-window-content {
     max-height: none;
     padding: var(--spacing-sm);
   }
-  .col-12, .col-8, .col-6, .col-4, .col-3, .col-2 {
+
+  .col-12,
+  .col-8,
+  .col-6,
+  .col-4,
+  .col-3,
+  .col-2 {
     grid-column: span 12;
   }
+
   .dos-and-donts-container {
     grid-template-columns: 1fr;
   }
+
   /* Font Scaling: Heading scale down 10% */
   .font-display {
     font-size: 72px;
     line-height: 90px;
   }
+
   .font-h2 {
     font-size: 36px;
     line-height: 50px;
   }
+
   .xp-start-menu {
     width: 100%;
   }
