@@ -23,6 +23,13 @@ window.addEventListener('DOMContentLoaded', () => {
   // Login mobile + bloqueio de acesso
   initMobileLogin();
 
+  // Garante animação do GIF no login ao carregar
+  requestAnimationFrame(() => {
+    if (!document.body.classList.contains('xp-logged-in')) {
+      restartLoginAvatarGif();
+    }
+  });
+
   // Inicia o relógio
   updateClock();
   setInterval(updateClock, 1000);
@@ -269,15 +276,18 @@ function resetWindowPositions() {
   if (startBtn) startBtn.classList.remove('active');
 }
 
-// Reinicia GIF do avatar quando o menu Iniciar abre (browsers pausam GIF em display:none)
-function restartStartMenuAvatarGif() {
-  const img = document.querySelector('.xp-start-menu-avatar img');
+// Reinicia GIF animado (browsers pausam GIF em elementos ocultos)
+function restartAnimatedGifImg(img) {
   if (!img) return;
   const src = (img.getAttribute('src') || '').split('?')[0];
   if (!src.toLowerCase().endsWith('.gif')) return;
   const fresh = img.cloneNode(true);
   fresh.src = `${src}?t=${Date.now()}`;
   img.replaceWith(fresh);
+}
+
+function restartLoginAvatarGif() {
+  restartAnimatedGifImg(document.querySelector('.xp-login-avatar'));
 }
 
 // Alterna a exibição do pop-up do Menu Iniciar
@@ -303,7 +313,6 @@ function toggleStartMenu() {
     if (typeof window.hideRecentPanel === 'function') window.hideRecentPanel();
     startMenu.style.display = 'flex';
     if (startBtn) startBtn.classList.add('active');
-    requestAnimationFrame(() => restartStartMenuAvatarGif());
   }
 }
 
@@ -1243,6 +1252,8 @@ function performLogoff() {
 
   const login = document.getElementById('xp-login-screen');
   if (login) login.style.display = '';
+
+  requestAnimationFrame(() => restartLoginAvatarGif());
 
   document.querySelectorAll('.xp-window').forEach(w => {
     w.style.display = 'none';
