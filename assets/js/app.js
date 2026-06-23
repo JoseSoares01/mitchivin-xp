@@ -1182,6 +1182,61 @@ function updateMobileMode() {
   });
 }
 
+const XP_SOUNDS = {
+  startup: 'assets/songs/startup.wav',
+  notify: 'assets/songs/notify.wav',
+  shutdown: 'assets/songs/shutdown.wav'
+};
+
+function playXpSound(name) {
+  const src = XP_SOUNDS[name];
+  if (!src) return null;
+
+  const audio = new Audio(src);
+  audio.play().catch(() => {});
+  return audio;
+}
+
+function playXpSoundAsync(name) {
+  return new Promise(resolve => {
+    const audio = playXpSound(name);
+    if (!audio) {
+      resolve();
+      return;
+    }
+
+    const done = () => resolve();
+    audio.addEventListener('ended', done, { once: true });
+    audio.addEventListener('error', done, { once: true });
+  });
+}
+
+function revealBalloon(balloon, options = {}) {
+  const { playNotify = false, trayBtn = null } = options;
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      balloon.classList.add('visible');
+      if (trayBtn) trayBtn.classList.add('active');
+
+      if (!playNotify) return;
+
+      let notifyPlayed = false;
+      const playNotifySound = () => {
+        if (notifyPlayed) return;
+        notifyPlayed = true;
+        playXpSound('notify');
+      };
+
+      balloon.addEventListener('transitionend', (e) => {
+        if (e.propertyName === 'opacity') playNotifySound();
+      }, { once: true });
+
+      setTimeout(playNotifySound, 300);
+    });
+  });
+}
+
 function initMobileLogin() {
   const loginBtn = document.getElementById('xp-login-user-btn');
   if (loginBtn) loginBtn.addEventListener('click', startLogin);
@@ -1246,7 +1301,10 @@ function completeLogin() {
   document.body.classList.add('xp-logged-in');
   sessionStorage.setItem('xp-logged-in', 'true');
   sessionStorage.removeItem('xp-require-login');
-  setTimeout(showWelcomeBalloon, 350);
+
+  playXpSoundAsync('startup').then(() => {
+    showWelcomeBalloon({ playNotify: true });
+  });
 }
 
 function closeStartMenu() {
@@ -1290,6 +1348,7 @@ function closePowerDialog(immediate = false) {
 }
 
 function performLogoff() {
+  playXpSound('shutdown');
   closePowerDialog(true);
   closeWelcomeBalloon(false);
   closeStartMenu();
@@ -1368,7 +1427,8 @@ function toggleWelcomeBalloon() {
   showWelcomeBalloon();
 }
 
-function showWelcomeBalloon() {
+function showWelcomeBalloon(options = {}) {
+  const { playNotify = false } = options;
   closeWelcomeBalloon(false);
 
   const desktop = document.getElementById('desktop');
@@ -1404,8 +1464,5 @@ function showWelcomeBalloon() {
   positionWelcomeBalloon();
   window.addEventListener('resize', positionWelcomeBalloon);
 
-  requestAnimationFrame(() => {
-    balloon.classList.add('visible');
-    if (trayBtn) trayBtn.classList.add('active');
-  });
+  revealBalloon(balloon, { playNotify, trayBtn });
 }
