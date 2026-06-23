@@ -1,0 +1,142 @@
+/* Ragnarok PBRO — demo ROBrowser */
+
+.xp-ragnarok-window .xp-window-content.xp-ragnarok-content {
+  padding: 0;
+  overflow: hidden;
+  height: 640px;
+  min-height: 420px;
+  background: #0a1028;
+}
+
+.xp-ragnarok-window.maximized .xp-ragnarok-content {
+  height: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.ro-game-shell {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  background: #0a1028;
+}
+
+.ro-splash {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(88, 124, 219, 0.25), transparent 55%),
+    linear-gradient(180deg, #141c44 0%, #0a1028 55%, #060a18 100%);
+  transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+
+.ro-splash.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.ro-splash-logo {
+  width: 96px;
+  height: 96px;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  border: 2px solid #2a335f;
+  box-shadow: 0 0 24px rgba(120, 160, 255, 0.35);
+}
+
+.ro-splash-title {
+  margin: 0;
+  color: #f0e6c8;
+  font-family: Tahoma, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.ro-splash-status {
+  margin: 0;
+  color: #b8c4e8;
+  font-family: Tahoma, sans-serif;
+  font-size: 12px;
+}
+
+.ro-loading-track {
+  width: min(320px, 80%);
+  height: 14px;
+  padding: 2px;
+  border: 1px solid #4a5688;
+  background: #1a2248;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.45);
+}
+
+.ro-loading-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(180deg, #8ec5ff 0%, #4a90e8 45%, #2f6ec4 100%);
+  animation: ro-loading-fill 2.4s ease-in-out forwards;
+}
+
+@keyframes ro-loading-fill {
+  0% { width: 0; }
+  35% { width: 42%; }
+  70% { width: 78%; }
+  100% { width: 100%; }
+}
+
+.ro-game-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  opacity: 0;
+  visibility: hidden;
+  background: #000;
+  transition: opacity 0.35s ease;
+}
+
+.ro-game-frame.ready {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+@media (max-width: 639px) {
+  body.xp-mobile .xp-ragnarok-window.active {
+    z-index: 195;
+  }
+
+  body.xp-mobile .xp-ragnarok-window .xp-ragnarok-content {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    flex: 1;
+    min-height: 0;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .ro-game-shell {
+    flex: 1;
+    min-height: 0;
+    height: auto;
+  }
+
+  .ro-splash-logo {
+    width: 72px;
+    height: 72px;
+  }
+
+  .ro-splash-title {
+    font-size: 18px;
+  }
+}

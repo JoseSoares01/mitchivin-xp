@@ -123,6 +123,7 @@ function openWindow(id) {
   if (id === 'window-wmp') wmpOpenDefault();
   if (id === 'window-layout' && typeof startCmdTerminal === 'function') startCmdTerminal();
   if (id === 'window-warcraft' && typeof initWarcraftMenu === 'function') initWarcraftMenu();
+  if (id === 'window-ragnarok' && typeof initRagnarokGame === 'function') initRagnarokGame();
 }
 
 // Gerenciamento de janelas: Foco (trazer para a frente)
@@ -165,6 +166,7 @@ function closeWindow(id) {
   win.style.display = 'none';
   if (id === 'window-wmp') document.getElementById('wmp-media')?.pause();
   if (id === 'window-warcraft' && typeof pauseWarcraftVideo === 'function') pauseWarcraftVideo();
+  if (id === 'window-ragnarok' && typeof stopRagnarokGame === 'function') stopRagnarokGame();
   if (id === 'window-layout' && typeof stopCmdTerminal === 'function') stopCmdTerminal();
   updateTaskbarHandles();
 }
@@ -275,6 +277,7 @@ function resetWindowPositions() {
     { id: 'window-depth', left: '260px', top: '240px', width: '720px' },
     { id: 'window-wmp', left: '120px', top: '80px', width: '420px' },
     { id: 'window-warcraft', left: '60px', top: '30px', width: '920px' },
+    { id: 'window-ragnarok', left: '40px', top: '24px', width: '960px' },
     { id: 'window-dos', left: '300px', top: '280px', width: '680px' },
     { id: 'window-responsive', left: '340px', top: '320px', width: '660px' }
   ];
@@ -497,6 +500,7 @@ function updateTaskbarHandles() {
     'window-depth': 'Meu Currículo',
     'window-wmp': 'Media Player',
     'window-warcraft': 'World of Warcraft',
+    'window-ragnarok': 'Ragnarok PBRO',
     'window-dos': 'Lixeira',
     'window-responsive': 'Simulador Vídeo'
   };
@@ -514,6 +518,7 @@ function updateTaskbarHandles() {
     'window-depth': 'assets/images/janyel/curriculo-pdf.png',
     'window-wmp': 'assets/icons/Windows XP Icons/Windows Media Player 10.png',
     'window-warcraft': 'assets/icons/Windows XP Icons/World of Warcraft.png',
+    'window-ragnarok': 'assets/images/ragnarok/logo.png',
     'window-dos': 'assets/icons/Windows XP Icons/Recycle Bin (empty).png',
     'window-responsive': 'assets/icons/Windows XP Icons/Display Properties.png'
   };

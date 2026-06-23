@@ -11,6 +11,7 @@
   <link rel="apple-touch-icon" href="assets/images/ui/favicon.png?v=2">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/warcraft.css">
+  <link rel="stylesheet" href="assets/css/ragnarok.css">
 </head>
 
 <body>
@@ -978,6 +979,42 @@
     </div>
 
 
+    <!-- ==================== WINDOW: RAGNAROK PBRO ==================== -->
+    <div class="xp-window xp-ragnarok-window" id="window-ragnarok" style="left: 40px; top: 24px; width: 960px; display: none;">
+      <div class="xp-window-titlebar" onmousedown="dragStart(event, 'window-ragnarok')">
+        <div class="xp-window-title">
+          <img class="xp-window-title-icon" src="assets/images/ragnarok/logo.png" alt="">
+          Ragnarok PBRO
+        </div>
+        <div class="xp-window-controls">
+          <button class="xp-window-control-btn" onclick="minimizeWindow('window-ragnarok')"><img src="assets/icons/Windows XP Icons/Minimize.png" alt="" class="xp-window-control-icon"></button>
+          <button class="xp-window-control-btn maximize-btn" onclick="maximizeWindow('window-ragnarok')"><img src="assets/icons/Windows XP Icons/Maximize.png" alt="" class="xp-window-control-icon"></button>
+          <button class="xp-window-control-btn close" onclick="closeWindow('window-ragnarok')"><img src="assets/icons/Windows XP Icons/Exit.png" alt="" class="xp-window-control-icon"></button>
+        </div>
+      </div>
+      <div class="xp-window-content xp-ragnarok-content">
+        <div class="ro-game-shell" id="ro-game-shell">
+          <div class="ro-splash" id="ro-splash" aria-live="polite">
+            <img class="ro-splash-logo" src="assets/images/ragnarok/logo.png" alt="Ragnarok PBRO">
+            <h2 class="ro-splash-title">Ragnarok PBRO</h2>
+            <p class="ro-splash-status">A ligar ao servidor...</p>
+            <div class="ro-loading-track" aria-hidden="true">
+              <div class="ro-loading-bar"></div>
+            </div>
+          </div>
+          <iframe
+            id="ro-game-frame"
+            class="ro-game-frame"
+            title="Ragnarok PBRO"
+            src="about:blank"
+            allow="fullscreen; autoplay; gamepad; microphone; camera"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+
     <!-- ==================== WINDOW 8: DO'S & DON'TS ==================== -->
     <div class="xp-window" id="window-dos" style="left: 300px; top: 280px; width: 680px; display: none;">
       <div class="xp-window-titlebar" onmousedown="dragStart(event, 'window-dos')">
@@ -1149,12 +1186,6 @@
               <div class="xp-start-menu-item-title">Media Player</div>
             </div>
           </div>
-          <div class="xp-start-menu-item" onclick="openWindow('window-warcraft')">
-            <img class="xp-start-menu-item-icon" src="assets/icons/Windows XP Icons/World of Warcraft.png" alt="">
-            <div>
-              <div class="xp-start-menu-item-title">World of Warcraft</div>
-            </div>
-          </div>
           <div class="xp-start-menu-all-programs-divider"></div>
           <div class="xp-start-menu-all-programs" id="all-programs-btn">
             <span class="xp-start-menu-all-programs-text">Todos os Programas</span>
@@ -1197,9 +1228,9 @@
             <img class="xp-start-menu-right-icon" src="assets/icons/Windows XP Icons/Game Boy Color.png" alt="">
             Game Boy Color
           </div>
-          <div class="xp-start-menu-right-item" onclick="openWindow('window-components')">
-            <img class="xp-start-menu-right-icon" src="assets/icons/Windows XP Icons/DoodleDev.png" alt="">
-            DoodleDev
+          <div class="xp-start-menu-right-item" onclick="openWindow('window-ragnarok')">
+            <img class="xp-start-menu-right-icon" src="assets/images/ragnarok/logo.png" alt="">
+            Ragnarok PBRO
           </div>
           <div class="xp-start-menu-right-item" onclick="openWindow('window-warcraft')">
             <img class="xp-start-menu-right-icon" src="assets/icons/Windows XP Icons/World of Warcraft.png" alt="">
@@ -1253,9 +1284,9 @@
             <img class="xp-programs-icon" src="assets/icons/Windows XP Icons/Command Prompt.png" alt="">
             Prompt de Comando
           </div>
-          <div class="xp-programs-item" onclick="openWindow('window-components')">
-            <img class="xp-programs-icon" src="assets/icons/Windows XP Icons/DoodleDev.png" alt="">
-            DoodleDev
+          <div class="xp-programs-item" onclick="openWindow('window-ragnarok')">
+            <img class="xp-programs-icon" src="assets/images/ragnarok/logo.png" alt="">
+            Ragnarok PBRO
           </div>
           <div class="xp-programs-item" onclick="openWindow('window-depth')">
             <img class="xp-programs-icon" src="assets/icons/Windows XP Icons/Game Boy Color.png" alt="">
@@ -1367,6 +1398,7 @@
   <script src="assets/js/paint-ui.js"></script>
   <script src="assets/js/cmd-terminal.js"></script>
   <script src="assets/js/warcraft.js"></script>
+  <script src="assets/js/ragnarok.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
 
