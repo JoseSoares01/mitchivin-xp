@@ -20,7 +20,7 @@ let lastY = 0;
 
 // Inicializa quando o DOM estiver carregado
 window.addEventListener('DOMContentLoaded', () => {
-  // Login mobile + bloqueio de acesso
+  // Login e imersão inicial (todos os dispositivos)
   initMobileLogin();
 
   updateMobileMode();
@@ -1241,17 +1241,11 @@ function initMobileLogin() {
   const loginBtn = document.getElementById('xp-login-user-btn');
   if (loginBtn) loginBtn.addEventListener('click', startLogin);
 
-  const loggedIn = sessionStorage.getItem('xp-logged-in') === 'true';
-  const requireLogin = sessionStorage.getItem('xp-require-login') === 'true';
+  // Sempre exige login ao aceder ao site (imersão com sons em desktop e mobile)
+  document.body.classList.remove('xp-logged-in');
 
-  if (loggedIn) {
-    document.body.classList.add('xp-logged-in');
-  } else if (isMobile() || requireLogin) {
-    document.body.classList.remove('xp-logged-in');
-  } else {
-    document.body.classList.add('xp-logged-in');
-    sessionStorage.setItem('xp-logged-in', 'true');
-  }
+  const login = document.getElementById('xp-login-screen');
+  if (login) login.style.display = '';
 
   document.querySelectorAll('.xp-desktop-icon[data-window]').forEach(icon => {
     icon.addEventListener('click', (e) => {
@@ -1262,14 +1256,6 @@ function initMobileLogin() {
         openWindow(windowId);
       }
     });
-  });
-
-  window.addEventListener('resize', () => {
-    if (!isMobile() && sessionStorage.getItem('xp-require-login') !== 'true') {
-      if (sessionStorage.getItem('xp-logged-in') === 'true') {
-        document.body.classList.add('xp-logged-in');
-      }
-    }
   });
 }
 
@@ -1299,8 +1285,6 @@ function startLogin() {
 
 function completeLogin() {
   document.body.classList.add('xp-logged-in');
-  sessionStorage.setItem('xp-logged-in', 'true');
-  sessionStorage.removeItem('xp-require-login');
 
   playXpSoundAsync('startup').then(() => {
     showWelcomeBalloon({ playNotify: true });
@@ -1353,8 +1337,6 @@ function performLogoff() {
   closeWelcomeBalloon(false);
   closeStartMenu();
 
-  sessionStorage.removeItem('xp-logged-in');
-  sessionStorage.setItem('xp-require-login', 'true');
   document.body.classList.remove('xp-logged-in');
 
   const login = document.getElementById('xp-login-screen');
