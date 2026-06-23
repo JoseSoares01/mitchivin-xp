@@ -167,7 +167,6 @@ function closeWindow(id) {
 
 // Gerenciamento de janelas: Minimizar (alternar exibição)
 function minimizeWindow(id) {
-  if (isMobile()) return;
   const win = document.getElementById(id);
   if (!win) return;
   win.style.display = 'none';
@@ -474,10 +473,6 @@ function updateTaskbarHandles() {
       `;
       
       handle.onclick = () => {
-        if (isMobile()) {
-          openWindow(id);
-          return;
-        }
         if (isActive) {
           minimizeWindow(id);
         } else {

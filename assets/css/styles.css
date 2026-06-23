@@ -3829,8 +3829,10 @@ body.xp-power-active #desktop {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    background-position: center bottom;
+    background-image: url('../images/ui/background-mobile.png');
+    background-position: center center;
     background-size: cover;
+    background-repeat: no-repeat;
   }
 
   .xp-desktop-icons {
@@ -3885,7 +3887,7 @@ body.xp-power-active #desktop {
     height: calc(100dvh - 40px);
   }
 
-  .xp-window-controls .xp-window-control-btn:not(.close) {
+  .xp-window-controls .xp-window-control-btn.maximize-btn {
     display: none !important;
   }
 
