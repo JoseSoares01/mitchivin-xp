@@ -18,17 +18,29 @@
   width: 100%;
   height: 100%;
   min-height: 420px;
-  background-image: url('../warcraft-menu-master/img/fondo-wc.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   overflow: hidden;
   cursor: url('../warcraft-menu-master/img/cursor-wc.cur'), auto;
+  background-color: #000;
+}
+
+.wc-bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%) scale(1.35);
+  object-fit: cover;
+  object-position: center center;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .wc-logo {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: block;
   max-width: min(400px, 42%);
   margin: 16px 0 0 16px;
@@ -40,10 +52,11 @@
   position: absolute;
   right: 0;
   top: 2.5%;
-  width: 49%;
+  width: 60%;
   height: 93%;
   transform: translateY(-105%);
   will-change: transform;
+  z-index: 3;
 }
 
 .wc-menu-stack.wc-animate {
@@ -67,8 +80,8 @@
 
 .wc-menu-actions {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 2%;
+  left: 10%;
   width: 100%;
   height: 100%;
   z-index: 2;

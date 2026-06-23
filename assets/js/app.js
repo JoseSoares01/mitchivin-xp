@@ -164,6 +164,7 @@ function closeWindow(id) {
 
   win.style.display = 'none';
   if (id === 'window-wmp') document.getElementById('wmp-media')?.pause();
+  if (id === 'window-warcraft' && typeof pauseWarcraftVideo === 'function') pauseWarcraftVideo();
   if (id === 'window-layout' && typeof stopCmdTerminal === 'function') stopCmdTerminal();
   updateTaskbarHandles();
 }
@@ -174,6 +175,7 @@ function minimizeWindow(id) {
   if (!win) return;
   win.style.display = 'none';
   if (id === 'window-wmp') document.getElementById('wmp-media')?.pause();
+  if (id === 'window-warcraft' && typeof pauseWarcraftVideo === 'function') pauseWarcraftVideo();
   if (id === 'window-layout' && typeof stopCmdTerminal === 'function') stopCmdTerminal();
   updateTaskbarHandles();
 }
