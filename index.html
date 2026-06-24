@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/warcraft.css">
   <link rel="stylesheet" href="assets/css/ragnarok.css">
+  <link rel="stylesheet" href="assets/css/paint-embed.css">
 </head>
 
 <body>
@@ -581,7 +582,7 @@
 
 
     <!-- ==================== WINDOW 4: MS PAINT ==================== -->
-    <div class="xp-window xp-paint-window" id="window-paint" style="left: 80px; top: 60px; width: 696px; display: none;">
+    <div class="xp-window xp-paint-window" id="window-paint" style="left: 80px; top: 60px; width: 920px; display: none;">
       <div class="xp-window-titlebar" onmousedown="dragStart(event, 'window-paint')">
         <div class="xp-window-title">
           <img class="xp-window-title-icon" src="assets/icons/Windows XP Icons/Paint.png" alt="">
@@ -593,50 +594,15 @@
           <button class="xp-window-control-btn close" onclick="closeWindow('window-paint')"><img src="assets/icons/Windows XP Icons/Exit.png" alt="" class="xp-window-control-icon"></button>
         </div>
       </div>
-      <div class="xp-window-menu xp-paint-menu">
-        <span class="xp-window-menu-item" onclick="paintMenuAction('file')">File</span>
-        <span class="xp-window-menu-item xp-window-menu-item--disabled">Edit</span>
-        <span class="xp-window-menu-item" onclick="paintMenuAction('view')">View</span>
-        <span class="xp-window-menu-item xp-window-menu-item--disabled">Tools</span>
-        <span class="xp-window-menu-item xp-window-menu-item--disabled">Help</span>
-      </div>
-
-      <div class="xp-paint-container">
-        <div class="xp-paint-main">
-          <div class="xp-paint-toolbar">
-            <div class="xp-paint-tools-grid" id="paint-tools-grid"></div>
-            <div class="xp-paint-options" id="paint-options">
-              <div class="xp-paint-sizes" id="paint-size-options">
-                <div class="xp-paint-size-option active" data-size="1" onclick="selectPaintSize(1, this)" title="1 px"></div>
-                <div class="xp-paint-size-option" data-size="3" onclick="selectPaintSize(3, this)" title="3 px"></div>
-                <div class="xp-paint-size-option" data-size="5" onclick="selectPaintSize(5, this)" title="5 px"></div>
-                <div class="xp-paint-size-option" data-size="8" onclick="selectPaintSize(8, this)" title="8 px"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="xp-paint-canvas-area" id="paint-canvas-area">
-            <div class="xp-paint-canvas-wrap">
-              <canvas class="xp-paint-canvas" id="paint-canvas" width="512" height="384"></canvas>
-              <span class="xp-paint-handle xp-paint-handle--right" aria-hidden="true"></span>
-              <span class="xp-paint-handle xp-paint-handle--bottom" aria-hidden="true"></span>
-              <span class="xp-paint-handle xp-paint-handle--corner" aria-hidden="true"></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="xp-paint-colors-bar">
-          <div class="xp-paint-color-preview" onclick="swapPaintColors()" title="Trocar cores primária/secundária">
-            <span class="xp-paint-bg-swatch" id="paint-bg-swatch"></span>
-            <span class="xp-paint-fg-swatch" id="paint-fg-swatch"></span>
-          </div>
-          <div class="xp-paint-colors-grid" id="paint-colors-grid"></div>
-        </div>
-
-        <div class="xp-paint-statusbar">
-          <span class="xp-paint-status-text" id="paint-status-text">For Help, click Help Topics on the Help Menu.</span>
-          <span class="xp-paint-status-coords" id="paint-status-coords"></span>
-        </div>
+      <div class="xp-window-content xp-paint-embed-content">
+        <iframe
+          id="xp-paint-frame"
+          class="xp-paint-frame"
+          title="Paint"
+          src="about:blank"
+          allow="clipboard-read; clipboard-write"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
     </div>
 
@@ -1395,7 +1361,7 @@
   <script src="assets/js/social-links.js"></script>
   <script src="assets/js/recent-apps.js"></script>
   <script src="assets/js/projects.js"></script>
-  <script src="assets/js/paint-ui.js"></script>
+  <script src="assets/js/paint-embed.js"></script>
   <script src="assets/js/cmd-terminal.js"></script>
   <script src="assets/js/warcraft.js"></script>
   <script src="assets/js/ragnarok.js"></script>

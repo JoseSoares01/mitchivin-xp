@@ -40,9 +40,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // Inicializa os manipuladores da barra de tarefas
   updateTaskbarHandles();
 
-  // Inicializa o aplicativo Paint no Canvas
-  initPaint();
-
   initSocialLinkDialogs();
 
   // Inicializa os comportamentos de passar o mouse/clicar no Menu Iniciar
@@ -124,6 +121,7 @@ function openWindow(id) {
   if (id === 'window-layout' && typeof startCmdTerminal === 'function') startCmdTerminal();
   if (id === 'window-warcraft' && typeof initWarcraftMenu === 'function') initWarcraftMenu();
   if (id === 'window-ragnarok' && typeof initRagnarokGame === 'function') initRagnarokGame();
+  if (id === 'window-paint' && typeof initXpPaint === 'function') initXpPaint();
 }
 
 // Gerenciamento de janelas: Foco (trazer para a frente)
@@ -167,6 +165,7 @@ function closeWindow(id) {
   if (id === 'window-wmp') document.getElementById('wmp-media')?.pause();
   if (id === 'window-warcraft' && typeof pauseWarcraftVideo === 'function') pauseWarcraftVideo();
   if (id === 'window-ragnarok' && typeof stopRagnarokGame === 'function') stopRagnarokGame();
+  if (id === 'window-paint' && typeof stopXpPaint === 'function') stopXpPaint();
   if (id === 'window-layout' && typeof stopCmdTerminal === 'function') stopCmdTerminal();
   updateTaskbarHandles();
 }
@@ -271,7 +270,7 @@ function resetWindowPositions() {
     { id: 'window-overview', left: '60px', top: '40px', width: '300px' },
     { id: 'window-colors', left: '100px', top: '80px', width: '640px' },
     { id: 'window-typography', left: '140px', top: '120px', width: '660px' },
-    { id: 'window-paint', left: '80px', top: '60px', width: '696px' },
+    { id: 'window-paint', left: '80px', top: '60px', width: '920px' },
     { id: 'window-components', left: '180px', top: '160px', width: '700px' },
     { id: 'window-layout', left: '220px', top: '200px', width: '640px' },
     { id: 'window-depth', left: '260px', top: '240px', width: '720px' },

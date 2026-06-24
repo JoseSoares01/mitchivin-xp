@@ -1,0 +1,46 @@
+/* MS Paint — embed XP Paint (chowderman.github.io) */
+
+.xp-paint-window .xp-window-content.xp-paint-embed-content {
+  padding: 0;
+  overflow: hidden;
+  height: 680px;
+  min-height: 480px;
+  background: #c0c0c0;
+}
+
+.xp-paint-window.maximized .xp-paint-embed-content {
+  height: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.xp-paint-frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  border: 0;
+  background: #c0c0c0;
+}
+
+@media (max-width: 639px) {
+  body.xp-mobile .xp-paint-window.active {
+    z-index: 195;
+  }
+
+  body.xp-mobile .xp-paint-window .xp-paint-embed-content {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    flex: 1;
+    min-height: 0;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .xp-paint-frame {
+    flex: 1;
+    min-height: 0;
+    height: auto;
+  }
+}
