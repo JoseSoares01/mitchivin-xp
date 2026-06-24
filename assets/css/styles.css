@@ -2599,6 +2599,98 @@ body {
   color: var(--primary-navy);
 }
 
+.xp-cv-skill-group {
+  margin-bottom: var(--spacing-sm);
+}
+
+.xp-cv-skill-group-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary-navy);
+  margin-bottom: 4px;
+}
+
+.xp-cv-tech-line {
+  margin-top: 6px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.xp-cv-header a {
+  color: var(--primary-navy);
+}
+
+.xp-cv-header a:hover {
+  color: #0F61CB;
+}
+
+/* Meu Currículo — menu Arquivo */
+.xp-cv-menubar {
+  position: relative;
+  z-index: 2;
+}
+
+.xp-window-menu-dropdown {
+  position: relative;
+}
+
+.xp-window-menu-item--trigger {
+  font-family: Tahoma, 'MS Sans Serif', Arial, sans-serif;
+  font-size: 11px;
+  color: var(--text-primary);
+  padding: 3px 6px;
+  cursor: pointer;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+}
+
+.xp-window-menu-item--trigger:hover,
+.xp-window-menu-dropdown.open .xp-window-menu-item--trigger {
+  background: var(--light-blue-surface);
+  color: var(--bright-blue);
+}
+
+.xp-window-menu-flyout {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  margin-top: 1px;
+  padding: 2px 0;
+  background: #fff;
+  border: 1px solid #aca899;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+  z-index: 50;
+}
+
+.xp-window-menu-flyout-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 5px 24px 5px 8px;
+  border: 0;
+  background: transparent;
+  font-family: Tahoma, 'MS Sans Serif', Arial, sans-serif;
+  font-size: 11px;
+  color: #000;
+  text-align: left;
+  cursor: pointer;
+}
+
+.xp-window-menu-flyout-item:hover {
+  background: #316ac5;
+  color: #fff;
+}
+
+.xp-window-menu-flyout-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 /* Meu Computador — Sobre este Mac */
 .xp-pc-about-window .xp-window-content.xp-pc-about-content {
   padding: 0;

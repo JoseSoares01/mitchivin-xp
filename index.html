@@ -745,11 +745,11 @@
 
 
     <!-- ==================== WINDOW: MEU CURRÍCULO ==================== -->
-    <div class="xp-window" id="window-depth" style="left: 260px; top: 240px; width: 720px; display: none;">
+    <div class="xp-window xp-cv-window" id="window-depth" style="left: 260px; top: 240px; width: 780px; display: none;">
       <div class="xp-window-titlebar" onmousedown="dragStart(event, 'window-depth')">
         <div class="xp-window-title">
           <img class="xp-window-title-icon" src="assets/images/janyel/curriculo-pdf.png" alt="">
-          Meu Currículo — José Janyel Rodrigues Soares
+          Meu Currículo — Anyel Rodrigues
         </div>
         <div class="xp-window-controls">
           <button class="xp-window-control-btn" onclick="minimizeWindow('window-depth')"><img src="assets/icons/Windows XP Icons/Minimize.png" alt="" class="xp-window-control-icon"></button>
@@ -757,95 +757,297 @@
           <button class="xp-window-control-btn close" onclick="closeWindow('window-depth')"><img src="assets/icons/Windows XP Icons/Exit.png" alt="" class="xp-window-control-icon"></button>
         </div>
       </div>
-      <div class="xp-window-menu">
-        <span class="xp-window-menu-item">Arquivo</span>
-        <span class="xp-window-menu-item">Editar</span>
-        <span class="xp-window-menu-item">Exibir</span>
-        <span class="xp-window-menu-item">Ajuda</span>
+      <div class="xp-window-menu xp-cv-menubar">
+        <div class="xp-window-menu-dropdown" id="cv-file-menu">
+          <button type="button" class="xp-window-menu-item xp-window-menu-item--trigger" onclick="toggleCvFileMenu(event)" aria-expanded="false" aria-haspopup="true">Arquivo</button>
+          <div class="xp-window-menu-flyout" role="menu" hidden>
+            <button type="button" class="xp-window-menu-flyout-item" role="menuitem" onclick="downloadCvPdf()">
+              <img src="assets/images/janyel/curriculo-pdf.png" alt="" class="xp-window-menu-flyout-icon">
+              Baixar PDF
+            </button>
+          </div>
+        </div>
+        <span class="xp-window-menu-item xp-window-menu-item--disabled">Editar</span>
+        <span class="xp-window-menu-item xp-window-menu-item--disabled">Exibir</span>
+        <span class="xp-window-menu-item xp-window-menu-item--disabled">Ajuda</span>
       </div>
       <div class="xp-window-content">
         <div class="xp-cv-header">
-          <img class="xp-cv-avatar" src="assets/images/janyel/avatar.png" alt="Janyel Rodrigues">
+          <img class="xp-cv-avatar" src="assets/images/janyel/avatar.png" alt="Anyel Rodrigues">
           <div>
-            <h2 class="font-h2" style="color: var(--primary-navy); margin-bottom: 4px;">José Janyel Rodrigues Soares</h2>
-            <p class="font-body" style="margin-bottom: 4px;"><strong>Analista BI</strong> · Consultor de TI · Gerente de Back Office</p>
+            <h2 class="font-h2" style="color: var(--primary-navy); margin-bottom: 4px;">Anyel Rodrigues</h2>
+            <p class="font-body" style="margin-bottom: 4px;"><strong>Data Analyst</strong> · Software Developer · Process Automation Specialist</p>
+            <p class="font-ui-label" style="color: var(--text-secondary); margin-bottom: 4px;">📍 Lisbon, Portugal</p>
             <p class="font-ui-label" style="color: var(--text-secondary);">
-              📧 janyelrodrigues@hotmail.com &nbsp;|&nbsp; 📱 +351 925 922 508 &nbsp;|&nbsp; 📍 Odivelas, Portugal
+              🔗 <a href="https://www.linkedin.com/in/janyel-rodrigues-1b998a190/" target="_blank" rel="noopener noreferrer">linkedin.com/in/janyel-rodrigues-1b998a190</a>
+              &nbsp;|&nbsp;
+              🔗 <a href="https://github.com/JoseSoares01" target="_blank" rel="noopener noreferrer">github.com/JoseSoares01</a>
             </p>
           </div>
         </div>
 
         <div class="xp-container-blue" style="margin: var(--spacing-md) 0;">
-          <h3 class="font-ui-label-bold" style="color: var(--primary-navy); margin-bottom: var(--spacing-xs);">RESUMO PROFISSIONAL</h3>
-          <p class="font-body">Consultor de TI na Servinform com foco em automação e visualização de dados. Utilizo Python e Microsoft Azure Machine Learning para soluções de ML e desenvolvimento de gráficos. Mais de 8 anos de experiência integrando análise gráfica e storytelling de dados para impacto estratégico.</p>
+          <h3 class="font-ui-label-bold" style="color: var(--primary-navy); margin-bottom: var(--spacing-xs);">PROFESSIONAL SUMMARY</h3>
+          <p class="font-body">Data Analyst and Software Developer with experience in business process automation, software development, business intelligence, and data-driven solutions.</p>
+          <p class="font-body" style="margin-top: var(--spacing-xs);">Currently working at Servinform Portugal, developing solutions that combine analytics, software engineering, and automation to improve operational efficiency, reduce manual work, and support strategic decision-making.</p>
+          <p class="font-body" style="margin-top: var(--spacing-xs);">Experienced in building analytical dashboards, internal business applications, workflow automations, and scalable web solutions using Python, SQL, Power BI, JavaScript, React, Next.js, PostgreSQL, Supabase, and cloud technologies.</p>
+          <p class="font-body" style="margin-top: var(--spacing-xs);">Passionate about digital products, system architecture, intelligent automation, and transforming complex business requirements into practical and scalable solutions that generate measurable impact.</p>
+          <p class="font-body" style="margin-top: var(--spacing-xs);">Currently pursuing a Master's Degree in Data Science while continuously expanding expertise in software engineering, artificial intelligence, and modern data platforms.</p>
         </div>
 
-        <h3 class="font-ui-label-bold" style="margin-bottom: var(--spacing-sm);">EXPERIÊNCIA PROFISSIONAL</h3>
+        <h3 class="font-ui-label-bold" style="margin-bottom: var(--spacing-sm);">PROFESSIONAL EXPERIENCE</h3>
+
         <div class="xp-cv-entry">
           <div class="xp-cv-entry-header">
-            <strong>Servinform</strong> — Gerente de Back Office
-            <span class="xp-cv-period">Nov 2022 – Presente · Lisboa, Portugal</span>
+            <strong>Servinform Portugal</strong> — Data Analyst &amp; Process Automation Developer
+            <span class="xp-cv-period">Apr 2024 – Present · Lisbon, Portugal</span>
           </div>
-          <p class="font-ui-label" style="color: var(--text-secondary);">Gestão administrativa e liderança de operações de back office em empresa de serviços de TI e consultoria digital.</p>
-        </div>
-        <div class="xp-cv-entry">
-          <div class="xp-cv-entry-header">
-            <strong>Servinform</strong> — Consultor de TI
-            <span class="xp-cv-period">Abr 2024 – Presente</span>
-          </div>
-          <p class="font-ui-label" style="color: var(--text-secondary);">Automação e visualização de dados com Python e Azure ML. Desenvolvimento de soluções de machine learning e gráficos para eficiência operacional.</p>
-        </div>
-        <div class="xp-cv-entry">
-          <div class="xp-cv-entry-header">
-            <strong>Universidade Estadual do Piauí</strong> — Supervisor Administrativo
-            <span class="xp-cv-period">Fev 2017 – Presente</span>
-          </div>
-          <p class="font-ui-label" style="color: var(--text-secondary);">Supervisão de tarefas administrativas e gestão de equipes em ambiente universitário.</p>
+          <p class="font-ui-label-bold" style="margin-bottom: 4px;">Key Responsibilities</p>
+          <ul class="font-ui-label xp-cv-list">
+            <li>Development of business process automation solutions using Python.</li>
+            <li>Creation of operational dashboards and analytical reports.</li>
+            <li>SQL data extraction, transformation, and analysis.</li>
+            <li>Development of internal tools to improve operational efficiency.</li>
+            <li>Process optimization through automation and data-driven workflows.</li>
+            <li>Support for strategic decision-making through business intelligence solutions.</li>
+            <li>Collaboration with multidisciplinary teams to implement digital transformation initiatives.</li>
+          </ul>
+          <p class="font-ui-label xp-cv-tech-line"><strong>Technologies:</strong> Python · SQL · Power BI · Excel · PostgreSQL · Azure</p>
         </div>
 
-        <h3 class="font-ui-label-bold" style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-sm);">FORMAÇÃO ACADÊMICA</h3>
         <div class="xp-cv-entry">
           <div class="xp-cv-entry-header">
-            <strong>Descomplica</strong> — Mestrado em Ciência de Dados
+            <strong>Servinform Portugal</strong> — Back Office Manager
+            <span class="xp-cv-period">Nov 2022 – Present</span>
+          </div>
+          <ul class="font-ui-label xp-cv-list">
+            <li>Operational team management.</li>
+            <li>KPI monitoring and performance analysis.</li>
+            <li>Workflow organization and optimization.</li>
+            <li>Reporting and operational planning.</li>
+            <li>Process improvement initiatives.</li>
+          </ul>
+        </div>
+
+        <div class="xp-cv-entry">
+          <div class="xp-cv-entry-header">
+            <strong>State University of Piauí (UESPI)</strong> — Administrative Supervisor
+            <span class="xp-cv-period">Feb 2017 – Present</span>
+          </div>
+          <ul class="font-ui-label xp-cv-list">
+            <li>Administrative operations management.</li>
+            <li>Documentation and process control.</li>
+            <li>Data analysis and reporting.</li>
+            <li>Institutional planning support.</li>
+          </ul>
+        </div>
+
+        <h3 class="font-ui-label-bold" style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-sm);">FEATURED PROJECTS</h3>
+
+        <div class="xp-cv-entry">
+          <div class="xp-cv-entry-header">
+            <strong>PauseFlow</strong> — SaaS Workflow &amp; Productivity Platform
+          </div>
+          <p class="font-ui-label" style="color: var(--text-secondary); margin-bottom: 4px;">Cloud-native SaaS platform designed to improve operational management and team productivity.</p>
+          <ul class="font-ui-label xp-cv-list">
+            <li>User authentication and authorization.</li>
+            <li>Real-time dashboards.</li>
+            <li>Permission-based access control.</li>
+            <li>Monitoring and observability.</li>
+            <li>Scalable architecture.</li>
+            <li>Workflow automation.</li>
+            <li>AI-assisted features.</li>
+          </ul>
+          <p class="font-ui-label xp-cv-tech-line"><strong>Technologies:</strong> Next.js · React · PostgreSQL · Supabase · Docker · Grafana · OpenTelemetry · Vercel</p>
+        </div>
+
+        <div class="xp-cv-entry">
+          <div class="xp-cv-entry-header">
+            <strong>Windows XP Experience</strong>
+          </div>
+          <p class="font-ui-label" style="color: var(--text-secondary); margin-bottom: 4px;">Interactive recreation of the Windows XP operating system running entirely in the browser.</p>
+          <ul class="font-ui-label xp-cv-list">
+            <li>Functional Start Menu.</li>
+            <li>Desktop environment.</li>
+            <li>Taskbar system.</li>
+            <li>Window management.</li>
+            <li>Responsive UI interactions.</li>
+            <li>Authentic Windows XP user experience.</li>
+          </ul>
+          <p class="font-ui-label xp-cv-tech-line"><strong>Technologies:</strong> HTML5 · CSS3 · JavaScript</p>
+        </div>
+
+        <div class="xp-cv-entry">
+          <div class="xp-cv-entry-header">
+            <strong>Contract Automation System</strong>
+          </div>
+          <p class="font-ui-label" style="color: var(--text-secondary); margin-bottom: 4px;">Automation platform developed to generate contracts automatically from Excel spreadsheets.</p>
+          <ul class="font-ui-label xp-cv-list">
+            <li>Reduced manual work.</li>
+            <li>Improved document consistency.</li>
+            <li>Increased operational productivity.</li>
+            <li>Minimized human errors.</li>
+          </ul>
+          <p class="font-ui-label xp-cv-tech-line"><strong>Technologies:</strong> Python · Pandas · OpenPyXL · Microsoft Word Automation</p>
+        </div>
+
+        <div class="xp-cv-entry">
+          <div class="xp-cv-entry-header">
+            <strong>Business Intelligence Dashboards</strong>
+          </div>
+          <p class="font-ui-label" style="color: var(--text-secondary); margin-bottom: 4px;">Development of executive dashboards and analytical reporting systems.</p>
+          <ul class="font-ui-label xp-cv-list">
+            <li>KPI monitoring.</li>
+            <li>Business performance analysis.</li>
+            <li>Data visualization.</li>
+            <li>Operational reporting.</li>
+          </ul>
+          <p class="font-ui-label xp-cv-tech-line"><strong>Technologies:</strong> Power BI · DAX · SQL · Excel</p>
+        </div>
+
+        <div class="xp-cv-entry">
+          <div class="xp-cv-entry-header">
+            <strong>Full Stack Applications</strong>
+          </div>
+          <p class="font-ui-label" style="color: var(--text-secondary); margin-bottom: 4px;">Development of modern web applications with authentication, APIs, and cloud databases.</p>
+          <p class="font-ui-label xp-cv-tech-line"><strong>Technologies:</strong> React · Next.js · Node.js · PostgreSQL · Supabase · TypeScript</p>
+        </div>
+
+        <div class="xp-cv-entry">
+          <div class="xp-cv-entry-header">
+            <strong>Process Automation Solutions</strong>
+          </div>
+          <p class="font-ui-label" style="color: var(--text-secondary); margin-bottom: 4px;">Creation of internal tools focused on reducing repetitive work and improving operational efficiency.</p>
+          <p class="font-ui-label xp-cv-tech-line"><strong>Technologies:</strong> Python · SQL · Excel Automation · APIs</p>
+        </div>
+
+        <h3 class="font-ui-label-bold" style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-sm);">TECHNICAL SKILLS</h3>
+
+        <div class="xp-cv-skill-group">
+          <p class="xp-cv-skill-group-title">Programming Languages</p>
+          <div class="xp-cv-skills">
+            <span class="xp-cv-skill">Python</span>
+            <span class="xp-cv-skill">SQL</span>
+            <span class="xp-cv-skill">JavaScript</span>
+            <span class="xp-cv-skill">TypeScript</span>
+            <span class="xp-cv-skill">C#</span>
+          </div>
+        </div>
+
+        <div class="xp-cv-skill-group">
+          <p class="xp-cv-skill-group-title">Front-End Development</p>
+          <div class="xp-cv-skills">
+            <span class="xp-cv-skill">React</span>
+            <span class="xp-cv-skill">Next.js</span>
+            <span class="xp-cv-skill">HTML5</span>
+            <span class="xp-cv-skill">CSS3</span>
+            <span class="xp-cv-skill">Tailwind CSS</span>
+          </div>
+        </div>
+
+        <div class="xp-cv-skill-group">
+          <p class="xp-cv-skill-group-title">Back-End Development</p>
+          <div class="xp-cv-skills">
+            <span class="xp-cv-skill">Node.js</span>
+            <span class="xp-cv-skill">REST APIs</span>
+            <span class="xp-cv-skill">Supabase</span>
+            <span class="xp-cv-skill">Server-side Applications</span>
+          </div>
+        </div>
+
+        <div class="xp-cv-skill-group">
+          <p class="xp-cv-skill-group-title">Databases</p>
+          <div class="xp-cv-skills">
+            <span class="xp-cv-skill">PostgreSQL</span>
+            <span class="xp-cv-skill">SQL Server</span>
+            <span class="xp-cv-skill">Relational Databases</span>
+            <span class="xp-cv-skill">Database Modeling</span>
+          </div>
+        </div>
+
+        <div class="xp-cv-skill-group">
+          <p class="xp-cv-skill-group-title">Data Analytics &amp; Business Intelligence</p>
+          <div class="xp-cv-skills">
+            <span class="xp-cv-skill">Power BI</span>
+            <span class="xp-cv-skill">DAX</span>
+            <span class="xp-cv-skill">Excel Advanced</span>
+            <span class="xp-cv-skill">Pandas</span>
+            <span class="xp-cv-skill">NumPy</span>
+            <span class="xp-cv-skill">Data Visualization</span>
+            <span class="xp-cv-skill">KPI Development</span>
+            <span class="xp-cv-skill">Reporting</span>
+          </div>
+        </div>
+
+        <div class="xp-cv-skill-group">
+          <p class="xp-cv-skill-group-title">Artificial Intelligence &amp; Machine Learning</p>
+          <div class="xp-cv-skills">
+            <span class="xp-cv-skill">Azure Machine Learning</span>
+            <span class="xp-cv-skill">Predictive Analytics</span>
+            <span class="xp-cv-skill">Data Modeling</span>
+            <span class="xp-cv-skill">AI-Assisted Applications</span>
+          </div>
+        </div>
+
+        <div class="xp-cv-skill-group">
+          <p class="xp-cv-skill-group-title">Cloud &amp; DevOps</p>
+          <div class="xp-cv-skills">
+            <span class="xp-cv-skill">AWS</span>
+            <span class="xp-cv-skill">Docker</span>
+            <span class="xp-cv-skill">GitHub Actions</span>
+            <span class="xp-cv-skill">Vercel</span>
+            <span class="xp-cv-skill">Grafana</span>
+            <span class="xp-cv-skill">OpenTelemetry</span>
+          </div>
+        </div>
+
+        <div class="xp-cv-skill-group">
+          <p class="xp-cv-skill-group-title">Tools &amp; Platforms</p>
+          <div class="xp-cv-skills">
+            <span class="xp-cv-skill">Git</span>
+            <span class="xp-cv-skill">GitHub</span>
+            <span class="xp-cv-skill">Figma</span>
+            <span class="xp-cv-skill">Jupyter Notebook</span>
+            <span class="xp-cv-skill">Supabase</span>
+          </div>
+        </div>
+
+        <h3 class="font-ui-label-bold" style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-sm);">EDUCATION</h3>
+        <div class="xp-cv-entry">
+          <div class="xp-cv-entry-header">
+            <strong>Descomplica</strong> — Master's Degree in Data Science
             <span class="xp-cv-period">2025 – 2027</span>
           </div>
         </div>
         <div class="xp-cv-entry">
           <div class="xp-cv-entry-header">
-            <strong>Data Science Academy</strong> — Licenciatura em Data Science
-            <span class="xp-cv-period">Em curso</span>
+            <strong>Data Science Academy</strong> — Bachelor's Degree in Data Science
+            <span class="xp-cv-period">2023 – 2024</span>
           </div>
         </div>
 
-        <h3 class="font-ui-label-bold" style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-sm);">CERTIFICAÇÕES</h3>
+        <h3 class="font-ui-label-bold" style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-sm);">CERTIFICATIONS</h3>
         <ul class="font-ui-label xp-cv-list">
-          <li>Python para Machine Learning e Análise de Dados — Didática Tech (Nov 2024)</li>
-          <li>Basic Python For Beginners — Didática Tech (Out 2024)</li>
-          <li>Git e GitHub — Cursa (Out 2024)</li>
-          <li>Segurança da Informação Classificada — Plataforma NAU (Out 2024)</li>
-          <li>Gestão dos Riscos de Cibersegurança — Plataforma NAU (Out 2024)</li>
-          <li>Supercomputação — Plataforma NAU (Out 2024)</li>
+          <li>Python for Machine Learning and Data Analysis — Didática Tech</li>
+          <li>Basic Python for Beginners — Didática Tech</li>
         </ul>
 
-        <h3 class="font-ui-label-bold" style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-sm);">COMPETÊNCIAS TÉCNICAS</h3>
-        <div class="xp-cv-skills">
-          <span class="xp-cv-skill">Python</span>
-          <span class="xp-cv-skill">R</span>
-          <span class="xp-cv-skill">SQL</span>
-          <span class="xp-cv-skill">Power BI</span>
-          <span class="xp-cv-skill">Tableau</span>
-          <span class="xp-cv-skill">Azure ML</span>
-          <span class="xp-cv-skill">AWS</span>
-          <span class="xp-cv-skill">Pandas</span>
-          <span class="xp-cv-skill">Scikit-learn</span>
-          <span class="xp-cv-skill">TensorFlow</span>
-          <span class="xp-cv-skill">Apache Spark</span>
-          <span class="xp-cv-skill">Git</span>
-          <span class="xp-cv-skill">Docker</span>
-        </div>
+        <h3 class="font-ui-label-bold" style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-sm);">LANGUAGES</h3>
+        <p class="font-ui-label">Portuguese — Native &nbsp;|&nbsp; English — Professional Working Proficiency &nbsp;|&nbsp; Spanish — Basic</p>
 
-        <h3 class="font-ui-label-bold" style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-sm);">IDIOMAS</h3>
-        <p class="font-ui-label">Português — Nativo &nbsp;|&nbsp; Inglês — Avançado</p>
+        <h3 class="font-ui-label-bold" style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-sm);">CORE STRENGTHS</h3>
+        <div class="xp-cv-skills">
+          <span class="xp-cv-skill">Data Analytics</span>
+          <span class="xp-cv-skill">Software Development</span>
+          <span class="xp-cv-skill">Process Automation</span>
+          <span class="xp-cv-skill">Business Intelligence</span>
+          <span class="xp-cv-skill">Problem Solving</span>
+          <span class="xp-cv-skill">Digital Product Development</span>
+          <span class="xp-cv-skill">Data-Driven Decision Making</span>
+          <span class="xp-cv-skill">System Architecture</span>
+          <span class="xp-cv-skill">Workflow Optimization</span>
+          <span class="xp-cv-skill">Artificial Intelligence Applications</span>
+        </div>
       </div>
     </div>
 
@@ -1353,6 +1555,7 @@
   <script src="assets/js/cmd-terminal.js"></script>
   <script src="assets/js/warcraft.js"></script>
   <script src="assets/js/ragnarok.js"></script>
+  <script src="assets/js/cv-menu.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
 

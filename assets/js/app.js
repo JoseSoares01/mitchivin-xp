@@ -273,7 +273,7 @@ function resetWindowPositions() {
     { id: 'window-paint', left: '80px', top: '60px', width: '920px' },
     { id: 'window-components', left: '180px', top: '160px', width: '700px' },
     { id: 'window-layout', left: '220px', top: '200px', width: '640px' },
-    { id: 'window-depth', left: '260px', top: '240px', width: '720px' },
+    { id: 'window-depth', left: '260px', top: '240px', width: '780px' },
     { id: 'window-wmp', left: '120px', top: '80px', width: '420px' },
     { id: 'window-warcraft', left: '60px', top: '30px', width: '920px' },
     { id: 'window-ragnarok', left: '40px', top: '24px', width: '960px' },
