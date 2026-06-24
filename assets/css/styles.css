@@ -2599,57 +2599,19 @@ body {
   color: var(--primary-navy);
 }
 
-/* Meu Computador — painel do sistema dentro de janela XP */
-.xp-pc-about-content {
-  padding: 10px;
-  background: #ece9d8;
-  text-align: center;
-}
-
-.xp-pc-about-photo-wrap {
-  position: relative;
-  display: inline-block;
-  max-width: 220px;
-  width: 100%;
-  overflow: hidden;
-  border: 1px solid #aca899;
-  border-radius: 3px;
-  box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;
+/* Meu Computador — Sobre este Mac */
+.xp-pc-about-window .xp-window-content.xp-pc-about-content {
+  padding: 0;
   background: #1e1e1e;
-  max-height: 300px;
+  overflow: hidden;
+  max-height: none;
 }
 
 .xp-pc-about-photo {
   display: block;
   width: 100%;
   height: auto;
-  /* Recorta barra macOS (topo) e rodapé/botão (base) da captura */
-  margin-top: -10%;
-  margin-bottom: -16%;
-}
-
-.xp-pc-serial-mask {
-  position: absolute;
-  left: 6%;
-  right: 6%;
-  top: 50%;
-  height: 6%;
-  background: #1e1e1e;
-  pointer-events: none;
-}
-
-.xp-pc-about-actions {
-  margin-top: 8px;
-}
-
-.xp-pc-about-actions .xp-btn-primary {
-  width: 100%;
-  max-width: 220px;
-}
-
-.xp-pc-about-actions .xp-btn-primary {
-  width: 100%;
-  max-width: 220px;
+  vertical-align: top;
 }
 
 /* Windows Media Player — estilo WMP 9/10 XP */

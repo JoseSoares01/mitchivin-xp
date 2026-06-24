@@ -391,7 +391,7 @@
 
 
     <!-- ==================== WINDOW: MEU COMPUTADOR ==================== -->
-    <div class="xp-window" id="window-overview" style="left: 60px; top: 40px; width: 300px; display: none;">
+    <div class="xp-window xp-pc-about-window" id="window-overview" style="left: 60px; top: 40px; width: 340px; display: none;">
       <div class="xp-window-titlebar" onmousedown="dragStart(event, 'window-overview')">
         <div class="xp-window-title">
           <img class="xp-window-title-icon" src="assets/icons/Windows XP Icons/My Computer.png" alt="">
@@ -403,20 +403,8 @@
           <button class="xp-window-control-btn close" onclick="closeWindow('window-overview')"><img src="assets/icons/Windows XP Icons/Exit.png" alt="" class="xp-window-control-icon"></button>
         </div>
       </div>
-      <div class="xp-window-menu">
-        <span class="xp-window-menu-item">Arquivo</span>
-        <span class="xp-window-menu-item">Editar</span>
-        <span class="xp-window-menu-item">Exibir</span>
-        <span class="xp-window-menu-item">Ajuda</span>
-      </div>
       <div class="xp-window-content xp-pc-about-content">
-        <div class="xp-pc-about-photo-wrap">
-          <img src="assets/images/janyel/mac-about.png" alt="Sobre este Mac — Mac mini 2023" class="xp-pc-about-photo">
-          <div class="xp-pc-serial-mask" aria-hidden="true"></div>
-        </div>
-        <div class="xp-pc-about-actions">
-          <button class="xp-btn-primary" type="button" onclick="showMacMoreInfo()">Informação adicional...</button>
-        </div>
+        <img src="assets/images/janyel/mac-about.png" alt="Sobre este Mac — Mac mini 2023" class="xp-pc-about-photo">
       </div>
     </div>
 

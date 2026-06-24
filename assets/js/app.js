@@ -267,7 +267,7 @@ function dragEnd() {
 // Redefine as posições das janelas para um layout em cascata limpo
 function resetWindowPositions() {
   const windows = [
-    { id: 'window-overview', left: '60px', top: '40px', width: '300px' },
+    { id: 'window-overview', left: '60px', top: '40px', width: '340px' },
     { id: 'window-colors', left: '100px', top: '80px', width: '640px' },
     { id: 'window-typography', left: '140px', top: '120px', width: '660px' },
     { id: 'window-paint', left: '80px', top: '60px', width: '920px' },
