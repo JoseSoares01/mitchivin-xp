@@ -4,5 +4,6 @@ Thumbs.db
 node_modules/
 dist/
 .env
+assets/js/contact-config.js
 .agents/
 

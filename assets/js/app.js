@@ -966,10 +966,11 @@ function showMacMoreInfo() {
   showNotification('Mac mini (2023) · Apple M2 · 8 GB · macOS Tahoe 26.6');
 }
 
-function sendContactMessage() {
+async function sendContactMessage() {
   const from = document.getElementById('contact-from')?.value?.trim() || '';
   const subject = document.getElementById('contact-subject')?.value?.trim() || 'Contact via Zé dos Dados XP';
   const message = document.getElementById('contact-message')?.value?.trim() || '';
+  const accessKey = window.CONTACT_CONFIG?.accessKey?.trim() || '';
 
   if (!from) {
     setContactStatus('Please enter your email address.');
@@ -981,11 +982,43 @@ function sendContactMessage() {
     document.getElementById('contact-message')?.focus();
     return;
   }
+  if (!accessKey) {
+    setContactStatus('Email service not configured. Add your Web3Forms access key in assets/js/contact-config.js');
+    return;
+  }
 
-  const body = `From: ${from}\n\n${message}`;
-  const mailto = `mailto:janyelrodrigues@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  window.location.href = mailto;
-  setContactStatus('Opening your email client...');
+  const sendBtn = document.querySelector('.xp-mail-toolbar-btn[title="Send Message"]');
+  if (sendBtn) sendBtn.disabled = true;
+  setContactStatus('Sending message...');
+
+  try {
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({
+        access_key: accessKey,
+        subject,
+        email: from,
+        message,
+        from_name: from,
+      }),
+    });
+
+    const result = await response.json();
+    if (!response.ok || !result.success) {
+      throw new Error(result.message || 'Unable to send message.');
+    }
+
+    resetContactForm();
+    setContactStatus('Message sent successfully. José will reply soon.');
+  } catch (error) {
+    setContactStatus(error.message || 'Failed to send message. Please try again later.');
+  } finally {
+    if (sendBtn) sendBtn.disabled = false;
+  }
 }
 
 function resetContactForm() {
